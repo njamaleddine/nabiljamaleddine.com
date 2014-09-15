@@ -192,7 +192,8 @@ footer {
 .section {
   clear: both;
   margin-top: 70px;
-  min-height: 650px;
+  min-height: 550px;
+  padding-top: 15px;
 }
 .section .title {
   font-size: 30px;
