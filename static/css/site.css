@@ -82,7 +82,7 @@ a:active {
     Homepage stylesheet
 */
 #main {
-  background: url("/static/images/nyc2.jpg");
+  background: url("/static/images/nyc.jpg");
   background-position: center;
   background-size: cover;
   color: #bbbbbb;

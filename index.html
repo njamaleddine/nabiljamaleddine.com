@@ -7,9 +7,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-        <link rel="icon" href="/favicon.png" />
-        <link rel="apple-touch-icon-precomposed" href="/favicon.png" />
-        <link rel="stylesheet" type="text/css" href="/css/site.css" />
+        <link rel="icon" href="/static/images/favicon.png" />
+        <link rel="apple-touch-icon-precomposed" href="/static/images/favicon.png" />
+        <link rel="stylesheet" type="text/css" href="/static/css/site.css" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
         <!--[if lt IE 9]>
@@ -18,41 +18,44 @@
     </head>
     <body>
         <nav>
-            <a href="http://nabiljamaleddine.com/">
+            <a href="/">
                 <span class="logo">Nabil Jamaleddine</span>
             </a>
             <ul>
+                <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="/contact/">Contact</a></li>
             </ul>
         </nav>
         <div id="main">
-            <div class="bio">
-                <p class="title">Who am i?</p>
-                <p>
-                    I'm a full stack web developer currently employed at the design and development consultancy JAKT. My stack is Django, PostgreSQL, JavaScript, LESS, and HTML5. When I'm not programming websites, building APIs, and <span class="cross-out">destroying</span> designing databases, I enjoy keeping up with the latest software and technology. A good cup of coffee is always great too.
+            <div id="bio" class="section-text">
+                <p class="title">Who am I?</p>
+                <p class="description">
+                    I'm a full stack web developer currently employed at the design and development consultancy JAKT. My development tools are Django, PostgreSQL, JavaScript, LESS, and HTML5. When I'm not programming websites, building APIs, and <span class="cross-out">destroying</span> designing databases, I enjoy keeping up with the latest software and technology. A frothy strong cup of coffee may also be considered one of my development tools.
                 </p>
+                <a href="/about/">Read More</a>
             </div>
-            <div class="about">
+            <div id="site" class="section-text">
                 <p class="title">What's happening here?</p>
-                <p>
+                <p class="description">
                     Once in a while I'll post a project or code snippet I'm working on.
                     The website itself is an ongoing project, make yourself at home.
                 </p>
             </div>
-            <div class="projects">
-                <div>
-                    <h3 class="title"></h3>
-                    <p class="description"></p>
-                </div>
+        </div>
+        <div id="projects" class="section-text">
+            <div>
+                <h3 class="title">Projects</h3>
+                <p class="description"></p>
+            </div>
+        </div>
+        <div id="resume" class="section-text">
+            <div>
+                <h3 class="title">Resume</h3>
+                <p class="description"></p>
             </div>
         </div>
         <footer>
-            <div id="nav-footer">
-                <p><a href="#projects">Projects</a></p>
-                <p><a href="/contact/">Contact</a></p>
-            </div>
-            <hr/>
             <p>&#169; 2014 &mdash; Nabil Jamaleddine</p>
         </footer>
     </body>
