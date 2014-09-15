@@ -8,6 +8,11 @@
 /* Bootstrap */
 /* Project Imports */
 /*
+    Variables stylesheet
+*/
+/* Fonts */
+/* Colors */
+/*
     Global Variables and styles
 */
 /*@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,400italic);*/
@@ -29,28 +34,42 @@ body {
   color: #222;
   font-family: "Roboto", Arial, sans-serif;
   font-size: 1em;
-  margin: auto;
   margin: 0;
   padding: 0;
+  max-width: 1366px;
+  margin: auto;
+}
+body > div,
+body > nav,
+body > footer {
+  padding: 0px 15px;
 }
 a {
-  color: #aaccaa;
+  color: #556655;
   transition: color 0.2s ease-out;
   text-decoration: underline;
 }
 a:hover {
+  color: #798f79;
   transition: color 0.2s ease-in;
-  color: #dae9da;
 }
 a:active {
+  color: #323c32;
   transition: color 0.05s ease-out;
-  color: #7aaf7a;
 }
-/*
-    Variables stylesheet
-*/
-/* Fonts */
-/* Colors */
+.light-anchor {
+  color: #aaccaa;
+  transition: color 0.2s ease-out;
+  text-decoration: underline;
+}
+.light-anchor:hover {
+  color: #dae9da;
+  transition: color 0.2s ease-in;
+}
+.light-anchor:active {
+  color: #7aaf7a;
+  transition: color 0.05s ease-out;
+}
 /*
     Mixins stylesheet
 */
@@ -75,6 +94,61 @@ a:active {
 /*
     Header stylesheet
 */
+nav {
+  margin-top: 25px;
+  padding-top: 15px;
+  text-align: center;
+}
+nav .logo {
+  color: #333;
+  display: block;
+  font-size: 35px;
+  font-weight: 300;
+  margin-left: -5px;
+  text-decoration: none;
+}
+nav .subheading {
+  color: #333;
+  font-size: 25px;
+  font-weight: 300;
+}
+nav .navigation {
+  display: inline-block;
+  list-style: none;
+  padding-left: 0px;
+}
+nav .navigation li {
+  float: left;
+  font-size: 20px;
+  font-weight: 300;
+  padding: 15px 15px 15px 0px;
+}
+nav .navigation li:last-of-type {
+  padding-right: 0;
+}
+@media (min-width: 400px) {
+  nav .logo {
+    font-size: 40px;
+  }
+}
+@media (min-width: 460px) {
+  nav {
+    text-align: left;
+  }
+  nav .logo {
+    font-size: 50px;
+  }
+}
+@media (min-width: 540px) {
+  nav .logo {
+    font-size: 60px;
+  }
+}
+@media (min-width: 620px) {
+  nav .logo {
+    font-size: 70px;
+  }
+}
 /*
     Footer stylesheet
 */

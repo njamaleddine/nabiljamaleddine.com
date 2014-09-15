@@ -3,5 +3,66 @@
 */
 
 nav {
+    margin-top: 25px;
+    padding-top: 15px;
+    text-align: center;
 
+    .logo {
+        color: #333;
+        display: block;
+        font-size: 35px;
+        font-weight: 300;
+        margin-left: -5px;
+        text-decoration: none;
+    }
+
+    .subheading {
+        color: #333;
+        font-size: 25px;
+        font-weight: 300;
+    }
+
+    .navigation {
+        display: inline-block;
+        list-style: none;
+        // margin-bottom: 80px;
+        padding-left: 0px;
+
+        li {
+            float: left;
+            font-size: 20px;
+            font-weight: 300;
+            padding: 15px 15px 15px 0px;
+
+            &:last-of-type {
+                padding-right: 0;
+            }
+        }
+    }
+
+    @media (min-width: 400px) {
+        .logo {
+            font-size: 40px;
+        }
+    }
+
+    @media (min-width: 460px) {
+        text-align: left;
+
+        .logo {
+            font-size: 50px;
+        }
+    }
+
+    @media (min-width: 540px) {
+        .logo {
+            font-size: 60px;
+        }
+    }
+
+    @media (min-width: 620px) {
+        .logo {
+            font-size: 70px;
+        }
+    }
 }

@@ -23,20 +23,36 @@ body {
     margin: auto;
     margin: 0;
     padding: 0;
+    // Max width for the body (should use a wrapper class but this works for now)
+    max-width: 1366px;
+    margin: auto;
+
+    // Add default padding to containers
+    & > div, & > nav, & > footer {
+        padding: 0px 15px;
+    }
 }
 
-a {
-    color: @link-green;
+.transition-anchor (@color: @dark-link-green) {
+    color: @color;
     transition: color 0.2s ease-out;
     text-decoration: underline;
 
     &:hover {
+        color: lighten(@color, 15%);
         transition: color 0.2s ease-in;
-        color: lighten(@link-green, 15%);
     }
 
     &:active {
+        color: darken(@color, 15%);
         transition: color 0.05s ease-out;
-        color: darken(@link-green, 15%);
     }
+}
+
+a {
+    .transition-anchor (@dark-link-green);
+}
+
+.light-anchor {
+    .transition-anchor (@link-green);
 }
