@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Nabil Jamaleddine - Web Developer - Earthquake Map</title>
+        <link rel="icon" href="../static/images/favicon.png" />
+        <link rel="apple-touch-icon-precomposed" href="../static/images/favicon.png" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjYBXY-8JZK1C2_TsGwF57k_tcKt2hJXw&#038;sensor=false"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+            <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+            <![endif]-->
+
+        <script type="text/javascript">
+                var geocoder;
+                var map;
+                var earthquakeDataURL; //URL for Geonames Earthquakes
+                var topEarthquakeDataURL; //URL for Geonames Earthquakes
+                var earthquakeArray = []; //Store the earthquakes JSON data in an array of objects
+                var earthquakeMarker = []; //Markers for all earthquakes placed on map
+                var contentString = ""; //String holding information on each earthquake
+                var infoWindow = new google.maps.InfoWindow({
+                    maxWidth: 300
+                });
+                var today = new Date(); //Get current date
+                var topTenShown = false;
+
+                /* Clear the map of all the earthquakeMarkers */
+                function clearMarkers() {
+                    while(earthquakeMarker[0]){
+                        earthquakeMarker.pop().setMap(null);
+                    }
+                    earthquakeMarker = [];
+                }
+
+                /* Format datetime key from Geonames REST
+                     To return proper date format specify 0 for returnVal.
+                     To return proper time format specify 1 for returnval. */
+                function formatDate(datetime, returnVal){
+                    var date, time;
+
+                    datetime = datetime.split(" ");
+                    date = datetime[0];
+                    time = datetime[1];
+
+                    if(returnVal === 0){
+                        return date;
+                    }
+                    else{
+                        return time;
+                    }
+                }
+
+                /*
+                    Validate that the number is an integet value less than 500.
+                    Did some research and could only add 500 markers in one search because
+                    of Geonames JSON Webservice 500 results restrictions.
+                 */
+                function numberFieldValidation(number){
+                    var reg = new RegExp('^[0-9]+$');
+
+                    if(reg.test(number)){
+                        if(number >= 1 && number <= 500){
+                            return true;
+                        }
+                        else if(number > 500 ){
+                            alert("Please choose a number that is greater than 0 and less than 500.");
+                        }
+                    }
+                }
+
+                /* Google Maps API: Initialize a map */
+                function initialize() {
+                    geocoder = new google.maps.Geocoder();
+                    var latlng = new google.maps.LatLng(+40.6700, -73.9400);
+                    var mapOptions = {
+                        zoom: 8,
+                        center: latlng
+                    }
+                    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+                }
+
+                /* Google Maps API: Get the location from the user input */
+                $(function(){
+                    $('#search').click(function codeAddress() {
+                        var address = "New York"; //Default address is New York for this project since some people disable geolocation
+                        if(document.getElementById('address').value !== ""){
+                            address = document.getElementById('address').value;
+                        }
+                        geocoder.geocode( { 'address': address}, function(results, status) {
+                            if (status == google.maps.GeocoderStatus.OK) {
+                                map.setCenter(results[0].geometry.location);
+
+                                var addressMarker = new google.maps.Marker({
+                                    map: map,
+                                    position: results[0].geometry.location
+                                });
+
+                                clearMarkers();
+                                plotEarthquakes();
+                            }
+                            else {
+                                alert('Sorry, your search was not successful. Error: ' + status);
+                            }
+                        });
+                    });
+                });
+                google.maps.event.addDomListener(window, 'load', initialize);
+
+                /* Plot earthquakes on map using Geonames REST API and Google Maps API */
+                function plotEarthquakes() {
+                    var bounds = map.getBounds();
+                    //Create URL from computed latitude and longitude
+                    earthquakeDataURL = "http://api.geonames.org/earthquakesJSON?north="+ bounds.getNorthEast().lat() +"&south="+ bounds.getSouthWest().lat() +"&east="+ bounds.getNorthEast().lng() +"&west="+ bounds.getSouthWest().lng() +"&username=njamaleddine";
+
+                    /*
+                        Check if the number of Earthquakes field has a valid number and is not hidden.
+                        if the field is hidden that means we reverted back to regular search, not advanced search so only search for the default number of earthquakes, which is 10
+                    */
+                    if($('#numberEarthquakes').is(":visible")){
+                        if(numberFieldValidation(document.getElementById('numberEarthquakes').value)){
+                            var results = $.trim(document.getElementById('numberEarthquakes').value);
+                            earthquakeDataURL = "http://api.geonames.org/earthquakesJSON?north="+ bounds.getNorthEast().lat() +"&south="+ bounds.getSouthWest().lat() +"&east="+ bounds.getNorthEast().lng() +"&west="+ bounds.getSouthWest().lng() + "&maxRows=" + results +"&username=njamaleddine";
+                        }
+                    }
+
+                    /*Obtain earthquake data from Geonames REST API*/
+                    //read the json file
+                    $(function(){
+                        $.ajax({
+                             url: earthquakeDataURL,
+                             dataType: 'json',
+                             success: function(data) {
+                                $.each(data.earthquakes, function(index, element) {
+                                    earthquakeArray[index] = new Object();
+
+                                    //Store earthquake information in an array of objects in case information needs to be manipulated or stored in a database for later projects
+                                    earthquakeArray[index].eqid = element.eqid;
+                                    earthquakeArray[index].magnitude = element.magnitude;
+                                    earthquakeArray[index].longitude = element.lng;
+                                    earthquakeArray[index].source1 = element.src;
+                                    earthquakeArray[index].date = formatDate(element.datetime, 0);
+                                    earthquakeArray[index].timeOfDay = formatDate(element.datetime, 1);
+                                    earthquakeArray[index].depth = element.depth;
+                                    earthquakeArray[index].latitude = element.lat;
+
+                                    //Place markers for each earthquake
+                                    var marker = new google.maps.Marker({
+                                        map: map,
+                                        title: document.getElementById('address').value + " ID: " +earthquakeArray[index].eqid,
+                                        position: new google.maps.LatLng(earthquakeArray[index].latitude, earthquakeArray[index].longitude)
+                                    });
+                                    //Store each map marker into the array
+                                    earthquakeMarker[index] = marker;
+
+                                    google.maps.event.addListener(marker, 'click', function() {
+                                        if(earthquakeArray[index].eqid !== null){
+                                            contentString = '<div style="width:200px" class="contentString">'+
+                                                                '<p><span style="font-weight:bold;">Earthquake ID:</span> ' + earthquakeArray[index].eqid + '</p>'+
+                                                                '<p><span style="font-weight:bold;">Magnitude:</span> ' + earthquakeArray[index].magnitude + '</p>'+
+                                                                '<p><span style="font-weight:bold;">Latitude:</span> ' + earthquakeArray[index].latitude + '<p>'+
+                                                                '<p><span style="font-weight:bold;">Longitude:</span> ' + earthquakeArray[index].longitude + '<p>'+
+                                                                '<p><span style="font-weight:bold;">Date:</span> ' + earthquakeArray[index].date + "</p>"+
+                                                                '<p><span style="font-weight:bold;">Time:</span> ' + earthquakeArray[index].timeOfDay + "</p>"+
+                                                                '<p><span style="font-weight:bold;">Depth:</span> ' + earthquakeArray[index].depth + '</p>'+
+                                                                '<p><span style="font-weight:bold;">Source:</span> ' + earthquakeArray[index].source1 + '</p>'+
+                                                            '</div>';
+
+                                            infoWindow.setContent(contentString);
+                                            infoWindow.open(map, marker);
+                                        }
+                                        else{
+                                            infoWindow.close();
+                                        }
+                                    });
+                                });
+                            },
+                            error: function() {
+                                alert("Failed to connect to Geonames Recent Earthquake WebService.");
+                                return false;
+                            }
+                        });
+                    });
+                }
+
+                /* Formats Date as YYYY-MM-DD  */
+                function getDateFormated(date){
+                    var day = date.getDate();
+                    var month = date.getMonth()+1;
+                    var year = date.getFullYear();
+
+                    if(day < 10){
+                        day='0'+day
+                    }
+                    if(month < 10){
+                        month='0'+month
+                    }
+                    return date = year+'-'+month+'-'+day;
+                }
+
+                function sortEarthquakes(earthquakeArray){
+                    var topEarthquakes = [];
+                    var topTenEarthquakes = [];
+                    var lastYear = new Date(); //This date today but last year.
+                    lastYear.setMonth(lastYear.getMonth()-12); //Ex: 2013 - 1 = 2012
+
+                    //Get length of the array from the dates in the past 12 months
+                    for(var i = 0; i < earthquakeArray.length; ++i){
+                        if(earthquakeArray[i].date > getDateFormated(lastYear)){
+                            topEarthquakes[i] = earthquakeArray[i];
+                        }
+                    }
+                    topTenEarthquakes = sortMagnitude(topEarthquakes);
+                }
+
+                /* swap function */
+                function swap(array, i, index){
+                    var temp = array[i];
+                    array[i] = array[index];
+                    array[index] = temp;
+                }
+
+                /* Bubblesort implementation for sorting magnitude. Sufficient for our data set size. */
+                function sortMagnitude(topEarthquakes){
+                    var returnArray = []; //only the 10 ten are returned
+                    var i = 0;
+                    var limit = topEarthquakes.length-1;
+                    var swapFlag = true;
+
+                    while(limit !== 0 && swapFlag === true){
+                        swapFlag = false;
+
+                        while(i !== limit){
+                            if(topEarthquakes[i].magnitude <= topEarthquakes[i+1].magnitude){
+                                swap(topEarthquakes, i, i+1);
+                                swapFlag = true;
+                            }
+                            i++;
+                        }
+                        limit--;
+                        i = 0;
+                    }
+                    for(var i = 0; i < 10; ++i){
+                        returnArray[i] = topEarthquakes[i];
+                    }
+                    var outputCount = 10;
+                    for(var i = returnArray.length-1; i >= 0 ; --i){
+                        outputHTML = '<tr><td>' + outputCount + '</td>'+
+                                                    '<td>' + returnArray[i].eqid + '</td>'+
+                                                 '<td>' + returnArray[i].magnitude + '</td>'+
+                                                 '<td>' + returnArray[i].latitude + '</td>'+
+                                                 '<td>' + returnArray[i].longitude + '</td>'+
+                                                 '<td>' + returnArray[i].date + "</td>"+
+                                                 '<td>' + returnArray[i].timeOfDay + "</td>"+
+                                                 '<td>' + returnArray[i].depth + '</td>'+
+                                                 '<td>' + returnArray[i].source1 + '</td></tr>';
+                        outputCount--;
+                        $('#tableHeader').after(outputHTML); //insert row in html table for top 10 earthquakes
+                    }
+                }
+
+                /*
+                    Get the top 10 earthquakes in the last 12 months.
+                    --------------------------------------------------
+                     Upon observation of the data from geonames.org, I came to the conclusion that a threshold level for the magnitude of 6.8
+                     consistently yielded enough results for each year or 12 month period. The results of a 200 row search yielded 147 earthquakes for
+                     this time period ranging back to 2007. To be safe that I will always have enough results I will run each search
+                     with a maxRows=70 in case one year has a particularly high amount of earthquakes. In this search, 70 rows yielded results for 3 years
+                */
+                $(function(){
+                    $('#topTenEarthquakes').click(function plotTopTenEarthquakes(){
+                        if(!topTenShown){
+                            topTenShown = true;
+                            var outputHTML = "";
+                            topEarthquakeDataURL = "http://api.geonames.org/earthquakesJSON?north=100&south=-100&east=180&west=-180&date="+getDateFormated(today)+"&maxRows=70&minMagnitude=6.8&username=njamaleddine";
+
+                            $.ajax({
+                             url: topEarthquakeDataURL,
+                             dataType: 'json',
+                             success: function(data) {
+                                    $.each(data.earthquakes, function(index, element) {
+                                        earthquakeArray[index] = new Object();
+
+                                        //Store earthquake information in an array of objects in case information needs to be manipulated or stored in a database for later projects
+                                        earthquakeArray[index].eqid = element.eqid;
+                                        earthquakeArray[index].magnitude = element.magnitude;
+                                        earthquakeArray[index].longitude = element.lng;
+                                        earthquakeArray[index].source1 = element.src;
+                                        earthquakeArray[index].date = formatDate(element.datetime, 0);
+                                        earthquakeArray[index].timeOfDay = formatDate(element.datetime, 1);
+                                        earthquakeArray[index].depth = element.depth;
+                                        earthquakeArray[index].latitude = element.lat;
+
+                                    });
+                                    // sort Earthquake by magnitude, only return 10
+                                    sortEarthquakes(earthquakeArray);
+                                    return true;
+                             },
+                             error: function() {
+                                alert("Failed to connect to Geonames Recent Earthquake WebService.");
+                                    return false;
+                             }
+                        });
+                        }
+                    });
+                });
+
+                /* jQuery Form Events */
+                /* Add click events when the following two fields have an enter keypress. */
+                 $(function(){
+                    $('#address').keyup(function(e){
+                        if(e.keyCode == 13)
+                        {
+                                $("#search").click();
+                        }
+                    });
+                    $('#numberEarthquakes').keyup(function(e){
+                        if(e.keyCode == 13)
+                        {
+                                $("#search").click();
+                        }
+                    });
+                });
+
+                /* Toggle Advanced Search Options */
+                $(function(){
+                    $('#filters').click(function(){
+                        $(".searchFilter").toggle("fast", function(){});
+                        $("#map-container").css("top", "-45%");
+                        $(".tableResults").css("top", "-45%");
+                        $("table").css("top", "-45%");
+                    });
+                });
+        </script>
+    </head>
+    <body>
+        <div>
+            <div id="content">
+                <form id="earthquake-search" action="javascript:codeAddress();">
+                    <fieldset>
+                        <div class="title">Earthquake Map Search</div>
+                        <p class="description">Search anywhere on Earth for recent earthquakes.</p>
+                        <label for="address">City or Location Name:</label>
+                        <input type="text" id="address" name="address" placeholder="Enter an address, ex: New York" autofocus="autofocus"/>
+                        <div id="sidebox" class="searchFilter">
+                            <label for="numberEarthquakes">Number of Earthquakes: </label>
+                            <input type="text" id="numberEarthquakes" name="numberEarthquakes" placeholder="Enter a number (less than 500), ex: 25" />
+                        </div>
+                        <input type="button" id="search" name="Search" value="Search"/>
+                        <input type="button" id="filters" name="filters" value="Advanced Search"/>
+                        <input type="button" id="topTenEarthquakes" name="topTenEarthquakes" value="Top Ten in 12 Months"/>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div id="map-container">
+            <div id="map-canvas"></div>
+        </div>
+        <div class="title tableResults">Top 10 Earthquakes in the past 12 months</div>
+        <table id="topTenEarthquakeList">
+            <tr id="tableHeader">
+                <th>#</th>
+                <th>Earthquake ID</th>
+                <th>Magnitude</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Depth</th>
+                <th>Source</th>
+            </tr>
+        </table>
+        <footer>
+            <p>&#169; 2014 &mdash; Nabil Jamaleddine</p>
+        </footer>
+    </body>
+</html>

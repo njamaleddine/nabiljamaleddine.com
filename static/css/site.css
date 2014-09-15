@@ -42,7 +42,7 @@ body {
 body > div,
 body > nav,
 body > footer {
-  padding: 0px 15px;
+  padding: 0px 20px;
 }
 a {
   color: #556655;
@@ -80,7 +80,7 @@ a:active {
   text-shadow: 1px 1px 2px #000;
   font-size: 30px;
   font-weight: 200;
-  color: #eeeeee;
+  color: #ffffff;
 }
 .cross-out {
   text-decoration: line-through;
@@ -102,7 +102,7 @@ nav {
 nav .logo {
   color: #333;
   display: block;
-  font-size: 35px;
+  font-size: 34px;
   font-weight: 300;
   margin-left: -5px;
   text-decoration: none;
@@ -152,6 +152,11 @@ nav .navigation li:last-of-type {
 /*
     Footer stylesheet
 */
+footer {
+  font-size: 16px;
+  font-weight: 300;
+  margin-top: 70px;
+}
 /*
     Homepage stylesheet
 */
@@ -159,21 +164,72 @@ nav .navigation li:last-of-type {
   background: url("/static/images/nyc.jpg");
   background-position: center;
   background-size: cover;
-  color: #bbbbbb;
+  color: #dddddd;
   font-size: 20px;
   font-weight: 300;
   min-height: 650px;
   padding: 20px;
 }
-#main .section-text {
+#main .information {
   margin-top: 50px;
 }
-#main .section-text .title {
+#main .information .title {
   text-shadow: 1px 1px 2px #000;
   font-size: 30px;
   font-weight: 200;
-  color: #eeeeee;
+  color: #ffffff;
 }
-#main .section-text .description {
+#main .information .description {
   text-shadow: 1px 1px 2px #000;
+}
+@media (max-width: 500px) {
+  #main .information div,
+  #main .information p:not(.title),
+  #main .information a {
+    font-size: 16px;
+  }
+}
+.section {
+  clear: both;
+  margin-top: 70px;
+  min-height: 650px;
+}
+.section .title {
+  font-size: 30px;
+  font-weight: 300;
+}
+.section .projects-list {
+  list-style: none;
+  padding-left: 0;
+}
+.section .projects-list li {
+  float: left;
+  display: inline-block;
+  width: 30.926%;
+  min-width: 250px;
+  margin: 0px 15px;
+}
+.section .projects-list li .subtitle {
+  font-size: 20px;
+  font-weight: 300;
+}
+.section .projects-list li .img-box img {
+  width: 100%;
+}
+.section .projects-list li .description {
+  font-weight: 300;
+}
+@media (min-width: 600px) {
+  .section .projects-list li {
+    min-width: 300px;
+  }
+}
+#skillset {
+  font-size: 20px;
+  font-weight: 300;
+}
+@media (max-width: 500px) {
+  #skillset {
+    font-size: 16px;
+  }
 }

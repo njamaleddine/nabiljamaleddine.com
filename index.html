@@ -29,14 +29,14 @@
             </ul>
         </nav>
         <div id="main">
-            <div id="bio" class="section-text">
+            <div id="bio" class="information">
                 <p class="title">Who am I?</p>
                 <p class="description">
-                    I'm a full stack web developer currently employed at the design and development consultancy JAKT. My development tools are Django, PostgreSQL, JavaScript, LESS, and HTML5. When I'm not programming websites, building APIs, and <span class="cross-out">destroying</span> designing databases, I enjoy keeping up with the latest software and technology. A frothy strong cup of coffee may also be considered one of my development tools.
+                    I'm a full stack web developer currently employed at the design and development consultancy JAKT. My stack is comprised of Django, PostgreSQL, JavaScript, LESS, and HTML5. When I'm not programming websites, building APIs, and <span class="cross-out">destroying</span> designing databases, I enjoy keeping up with the latest news on software and technology. A strong, frothy cup of coffee is my most important development tool.
                 </p>
-                <a href="#skills" class="light-anchor">Read More</a>
+                <a href="#skillset" class="light-anchor">Read More about my skill set</a>
             </div>
-            <div id="site" class="section-text">
+            <div id="site" class="information">
                 <p class="title">What's happening here?</p>
                 <p class="description">
                     Once in a while I'll post a project or code snippet I'm working on.
@@ -44,17 +44,92 @@
                 </p>
             </div>
         </div>
-        <div id="projects" class="section-text">
-            <div>
-                <h3 class="title">Projects</h3>
-                <p class="description"></p>
-            </div>
+        <div id="projects" class="section">
+            <h3 class="title">Projects</h3>
+            <ul class="projects-list">
+                <li>
+                    <a href="/projects/earthquake.html" target="_blank" class="img-box">
+                        <p class="subtitle">Earthquake Map</p>
+                        <img src="/static/images/earthquake.png" alt="Earthquake Map"/>
+                    </a>
+                    <p class="description">
+                        A <a href="https://developers.google.com/maps/">Google Maps API</a> and <a href="http://www.geonames.org/export/JSON-webservices.html">Geonames REST Webservice</a> project that
+                        displays earthquake information of any city. Displays the 10 largest earthquakes in the 24 months.
+                    </p>
+                </li>
+                <li>
+                    <a href="http://elankb.com/" target="_blank" class="img-box">
+                        <p class="subtitle">Elan Kitchen and Bath</p>
+                        <img src="/static/images/elankb.png" alt="Elan Website"/>
+                    </a>
+                    <p class="description">
+                        A small kitchen and bath business website featuring company information,
+                        a contact form, and photographs using a combination of HTML5, CSS3, PHP, and jQuery.
+                    </p>
+                </li>
+            </ul>
         </div>
-        <div id="skills" class="section-text">
-            <div>
-                <h3 class="title">Resume</h3>
-                <p class="description"></p>
-            </div>
+        <div id="skillset" class="section">
+            <h3 class="title">Skill set</h3>
+            <p class="description">Below is a list of various languages, frameworks, and libraries I use:</p>
+            <ul class="skills">
+                <li>Languages
+                    <ul>
+                        <li>Python
+                            <ul>
+                                <li>Django</li>
+                                <li>Django REST Framework</li>
+                                <li>South (pre Django 1.7)</li>
+                            </ul>
+                        </li>
+                        <li>JavaScript
+                            <ul>
+                                <li>jQuery</li>
+                                <li>Underscore.js</li>
+                            </ul>
+                        </li>
+                        <li>Java</li>
+                        <li>PHP</li>
+                        <li>C++</li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li>Relational Databases
+                    <ul>
+                        <li>
+                            PostgreSQL, MySQL, Oracle SQL
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li>Markup/Stylesheets
+                    <ul>
+                        <li>
+                            HTML5, XHTML, CSS3 (including LESS and SASS)
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li>Software
+                    <ul>
+                        <li>
+                            Sublime Text, Git, Eclipse, Microsoft Visual Studio 2012, Oracle RDBMS, MySQL Server, Adobe Photoshop
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li>Operating Systems
+                    <ul>
+                        <li>
+                            Linux/Unix, Mac OS X, Windows, Android
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </div>
         <footer>
             <p>&#169; 2014 &mdash; Nabil Jamaleddine</p>
