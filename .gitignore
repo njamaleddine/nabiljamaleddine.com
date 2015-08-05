@@ -1,3 +1,4 @@
 .env*
 *.log
 *.xcf
+.DS_Store
