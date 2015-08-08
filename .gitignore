@@ -1,4 +1,5 @@
 .env*
 *.log
 *.xcf
+*.pyc
 .DS_Store
