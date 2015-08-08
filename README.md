@@ -34,7 +34,7 @@
 ### Project Setup
 1. Clone repository:
 
-        `git clone git@github.com:jakt/alley_internal_system.git`
+        `git clone git@bitbucket.org:njamaleddine/nabiljamaleddine.git`
 
 2. Create a virtualenv:
 
