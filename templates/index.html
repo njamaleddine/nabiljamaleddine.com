@@ -1,178 +1,142 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Nabil Jamaleddine - Web Developer</title>
-
-        <meta name="author" content="Nabil Jamaleddine">
-        <meta name="keywords" content="Django,Python,JavaScript,PostgreSQL,HTML5,REST,Angular,Linux,Android,Programmer,Developer,Backend,Fullstack,Engineer">
-        <meta name="description" content="Nabil Jamaleddine, a Web Developer interested in elegant code, database schema design, and RESTful API development.">
-
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-        <link rel="icon" href="/static/images/favicon.png" />
-        <link rel="apple-touch-icon-precomposed" href="/static/images/favicon.png" />
-        <link rel="stylesheet" type="text/css" href="/static/css/site.css" />
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-        <!--[if lt IE 9]>
-        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-    </head>
-    <body>
-        <nav>
-            <a href="/" class="logo">
-                Nabil Jamaleddine
+{% extends 'layouts/base.html' %}
+{% block body %}
+<div id="main">
+    <div id="bio" class="information">
+        <p class="title">Who am I?</p>
+        <p class="description">
+            I'm a fullstack developer currently employed at the design and development consultancy JAKT. I spend most of my time developing in Django, PostgreSQL, JavaScript, LESS, and HTML5 while being mindful of the philosophy "Explicit is better than implicit." Although most of my work is server side, I embrace all parts of the development process.
+        </p>
+        <p class="description">
+            When I'm not developing web applications, building APIs, and architechting databases, I enjoy browsing hacker news and reddit in an effort to keep up with some of the latest news on software and technology.
+        </p>
+        <p class="description">
+            A strong, frothy cup of coffee is my most important development tool.
+        </p>
+        <a href="#skillset" class="light-anchor">Read More about my skill set</a>
+    </div>
+    <div class="information">
+        <p class="title">What else is out there?</p>
+        <a href="https://github.com/njamaleddine" target="_blank" class="light-anchor">Github</a>
+        <a href="https://www.linkedin.com/pub/nabil-j/40/942/70" target="_blank" class="light-anchor">LinkedIn</a>
+    </div>
+</div>
+<!--
+<div id="projects" class="section">
+    <h3 class="title">Projects</h3>
+    <ul class="projects-list">
+        <li>
+            <a href="#" target="_blank" class="img-box">
+                <p class="subtitle">Earthquake Map</p>
+                <img src="/static/images/earthquake.png" alt="Earthquake Map"/>
             </a>
-            <h1 class="subheading">Web Developer</h1>
-            <ul class="navigation">
-                <li><a href="#main">About</a></li>
-                <li><a href="#skillset">Skills</a></li>
-                <!-- <li><a href="#projects">Projects</a></li> -->
-                <!-- <li><a href="/contact/">Contact</a></li> -->
+            <p class="description">
+                A <a href="https://developers.google.com/maps/" target="_blank" >Google Maps API</a> and <a href="http://www.geonames.org/export/JSON-webservices.html" target="_blank" >Geonames REST Webservice</a> project that
+                displays earthquake information of any city. Displays the 10 largest earthquakes in the 24 months.
+            </p>
+        </li>
+        <li>
+            <a href="http://elankb.com/" target="_blank" class="img-box">
+                <p class="subtitle">Elan Kitchen and Bath</p>
+                <img src="/static/images/elankb.png" alt="Elan Website"/>
+            </a>
+            <p class="description">
+                A small kitchen and bath business website featuring company information,
+                a contact form, and photographs using a combination of HTML5, CSS3, PHP, and jQuery.
+            </p>
+        </li>
+    </ul>
+</div>
+-->
+<div id="skillset" class="section">
+    <h3 class="title">Skill set</h3>
+    <p class="description">Below is a list of various languages, frameworks, and libraries I use:</p>
+    <ul class="skills">
+        <li>Languages
+            <ul>
+                <li>Python
+                    <ul>
+                        <li>Django</li>
+                        <li>Django REST Framework</li>
+                        <li>Celery</li>
+                        <li>Flask</li>
+                    </ul>
+                </li>
+                <li>JavaScript
+                    <ul>
+                        <li>Angular</li>
+                        <li>jQuery</li>
+                        <li>Underscore.js</li>
+                    </ul>
+                </li>
+                <li>Java
+                    <ul>
+                        <li>Android SDK</li>
+                    </ul>
+                </li>
+                <li>C++</li>
+                <li>PHP</li>
             </ul>
-        </nav>
-        <div id="main">
-            <div id="bio" class="information">
-                <p class="title">Who am I?</p>
-                <p class="description">
-                    I'm a fullstack developer currently employed at the design and development consultancy JAKT. I spend most of my time developing in Django, PostgreSQL, JavaScript, LESS, and HTML5 while being mindful of the philosophy "Explicit is better than implicit." Although most of my work is server side, I embrace all parts of the development process.
-                </p>
-                <p class="description">
-                    When I'm not developing web applications, building APIs, and architechting databases, I enjoy browsing hacker news and reddit in an effort to keep up with some of the latest news on software and technology.
-                </p>
-                <p class="description">
-                    A strong, frothy cup of coffee is my most important development tool.
-                </p>
-                <a href="#skillset" class="light-anchor">Read More about my skill set</a>
-            </div>
-            <div class="information">
-                <p class="title">What else is out there?</p>
-                <a href="https://github.com/njamaleddine" target="_blank" class="light-anchor">Github</a>
-                <a href="https://www.linkedin.com/pub/nabil-j/40/942/70" target="_blank" class="light-anchor">LinkedIn</a>
-            </div>
-        </div>
-        <!--
-        <div id="projects" class="section">
-            <h3 class="title">Projects</h3>
-            <ul class="projects-list">
+        </li>
+    </ul>
+    <ul>
+        <li>Relational Databases
+            <ul>
                 <li>
-                    <a href="#" target="_blank" class="img-box">
-                        <p class="subtitle">Earthquake Map</p>
-                        <img src="/static/images/earthquake.png" alt="Earthquake Map"/>
-                    </a>
-                    <p class="description">
-                        A <a href="https://developers.google.com/maps/" target="_blank" >Google Maps API</a> and <a href="http://www.geonames.org/export/JSON-webservices.html" target="_blank" >Geonames REST Webservice</a> project that
-                        displays earthquake information of any city. Displays the 10 largest earthquakes in the 24 months.
-                    </p>
+                    PostgreSQL
                 </li>
                 <li>
-                    <a href="http://elankb.com/" target="_blank" class="img-box">
-                        <p class="subtitle">Elan Kitchen and Bath</p>
-                        <img src="/static/images/elankb.png" alt="Elan Website"/>
-                    </a>
-                    <p class="description">
-                        A small kitchen and bath business website featuring company information,
-                        a contact form, and photographs using a combination of HTML5, CSS3, PHP, and jQuery.
-                    </p>
+                    MySQL
+                </li>
+                <li>
+                    Oracle SQL
                 </li>
             </ul>
-        </div>
-        -->
-        <div id="skillset" class="section">
-            <h3 class="title">Skill set</h3>
-            <p class="description">Below is a list of various languages, frameworks, and libraries I use:</p>
-            <ul class="skills">
-                <li>Languages
-                    <ul>
-                        <li>Python
-                            <ul>
-                                <li>Django</li>
-                                <li>Django REST Framework</li>
-                                <li>Celery</li>
-                                <li>Flask</li>
-                            </ul>
-                        </li>
-                        <li>JavaScript
-                            <ul>
-                                <li>Angular</li>
-                                <li>jQuery</li>
-                                <li>Underscore.js</li>
-                            </ul>
-                        </li>
-                        <li>Java
-                            <ul>
-                                <li>Android SDK</li>
-                            </ul>
-                        </li>
-                        <li>C++</li>
-                        <li>PHP</li>
-                    </ul>
-                </li>
-            </ul>
+        </li>
+    </ul>
+    <ul>
+        <li>Key Value Stores / Queues
             <ul>
-                <li>Relational Databases
-                    <ul>
-                        <li>
-                            PostgreSQL
-                        </li>
-                        <li>
-                            MySQL
-                        </li>
-                        <li>
-                            Oracle SQL
-                        </li>
-                    </ul>
+                <li>
+                    Redis
+                </li>
+                <li>
+                    RabbitMQ
                 </li>
             </ul>
+        </li>
+    </ul>
+    <ul>
+        <li>Markup / Stylesheets / Frontend Frameworks
             <ul>
-                <li>Key Value Stores / Queues
-                    <ul>
-                        <li>
-                            Redis
-                        </li>
-                        <li>
-                            RabbitMQ
-                        </li>
-                    </ul>
+                <li>
+                    HTML5
+                </li>
+                <li>
+                    CSS3 (including LESS and SASS)
+                </li>
+                <li>
+                    Bootstrap
                 </li>
             </ul>
+        </li>
+    </ul>
+    <ul>
+        <li>Software
             <ul>
-                <li>Markup / Stylesheets / Frontend Frameworks
-                    <ul>
-                        <li>
-                            HTML5
-                        </li>
-                        <li>
-                            CSS3 (including LESS and SASS)
-                        </li>
-                        <li>
-                            Bootstrap
-                        </li>
-                    </ul>
+                <li>
+                    Sublime Text, Git, Android Studio, VIM, Eclipse, Microsoft Visual Studio 2012, Oracle RDBMS, MySQL Server, Adobe Photoshop
                 </li>
             </ul>
+        </li>
+    </ul>
+    <ul>
+        <li>Operating Systems
             <ul>
-                <li>Software
-                    <ul>
-                        <li>
-                            Sublime Text, Git, Android Studio, VIM, Eclipse, Microsoft Visual Studio 2012, Oracle RDBMS, MySQL Server, Adobe Photoshop
-                        </li>
-                    </ul>
+                <li>
+                    Linux, Mac OS X, Unix, Windows, Android
                 </li>
             </ul>
-            <ul>
-                <li>Operating Systems
-                    <ul>
-                        <li>
-                            Linux, Mac OS X, Unix, Windows, Android
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <footer>
-            <p>&#169; 2015 &mdash; Nabil Jamaleddine</p>
-        </footer>
-    </body>
-</html>
+        </li>
+    </ul>
+</div>
+{% endblock %}
