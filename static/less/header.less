@@ -3,12 +3,18 @@
 */
 
 nav {
-    margin-top: 25px;
-    padding-top: 15px;
+    // margin-top: 25px;
+    // padding-top: 15px;
     text-align: center;
+    padding-top: 25px !important;
+    padding-bottom: 25px !important;
 
+    @media (min-width: 800px) {
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
+    }
     .logo {
-        color: #333;
+        color: @dark-gray;
         display: block;
         font-size: 34px;
         font-weight: 300;
@@ -17,7 +23,7 @@ nav {
     }
 
     .subheading {
-        color: #333;
+        color: @dark-gray;
         font-size: 25px;
         font-weight: 300;
     }

@@ -16,20 +16,31 @@ a img {
 }
 
 body {
-    background-color: #fff;
-    color: #222;
+    background-color: @white;
+    color: @body-gray;
     font-family: @roboto;
     font-size: 1em;
     margin: auto;
     margin: 0;
     padding: 0;
-    // Max width for the body (should use a wrapper class but this works for now)
-    // max-width: 1366px;
     margin: auto;
 
     // Add default padding to containers
     & > div, & > nav, & > footer {
         padding: 0px 20px;
+
+        @media (min-width: 500px) {
+            padding: 20px;
+        }
+
+        @media (min-width: 700px) {
+            padding: 20px 50px;
+        }
+
+        @media (min-width: 800px) {
+            padding: 20px 100px;
+        }
+
     }
 }
 
@@ -55,4 +66,9 @@ a {
 
 .light-anchor {
     .transition-anchor (@link-green);
+}
+
+/* Remove mac outline */
+input:focus, textarea:focus {
+    outline: none;
 }

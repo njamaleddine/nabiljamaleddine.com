@@ -4,10 +4,10 @@
     <div id="bio" class="information">
         <p class="title">Who am I?</p>
         <p class="description">
-            I'm a fullstack developer currently employed at the design and development consultancy JAKT. I spend most of my time developing in Django, PostgreSQL, JavaScript, LESS, and HTML5 while being mindful of the philosophy "Explicit is better than implicit." Although most of my work is server side, I embrace all parts of the development process.
+            I'm a fullstack developer currently employed at the design and development consultancy JAKT. I spend most of my time developing in Django, PostgreSQL, JavaScript, Sass, and HTML5. Although most of my work involves the server side, I embrace all aspects of the development process.
         </p>
         <p class="description">
-            When I'm not developing web applications, building APIs, and architechting databases, I enjoy browsing hacker news and reddit in an effort to keep up with some of the latest news on software and technology.
+            When I'm not developing RESTful APIs, building web applications, and architechting databases, I enjoy browsing hacker news and reddit to catch up on some of the latest news on software and technology.
         </p>
         <p class="description">
             A strong, frothy cup of coffee is my most important development tool.
@@ -49,7 +49,7 @@
 -->
 <div id="skillset" class="section">
     <h3 class="title">Skill set</h3>
-    <p class="description">Below is a list of various languages, frameworks, and libraries I use:</p>
+    <p class="description">Below is a non exhaustive list of various languages, frameworks, and libraries I use:</p>
     <ul class="skills">
         <li>Languages
             <ul>
@@ -59,13 +59,14 @@
                         <li>Django REST Framework</li>
                         <li>Celery</li>
                         <li>Flask</li>
+                        <li>pytest</li>
+                        <li>unittest.mock</li>
                     </ul>
                 </li>
                 <li>JavaScript
                     <ul>
-                        <li>Angular</li>
+                        <li>Node.js</li>
                         <li>jQuery</li>
-                        <li>Underscore.js</li>
                     </ul>
                 </li>
                 <li>Java
@@ -89,6 +90,9 @@
                 </li>
                 <li>
                     Oracle SQL
+                </li>
+                <li>
+                    SQLite
                 </li>
             </ul>
         </li>
@@ -121,10 +125,19 @@
         </li>
     </ul>
     <ul>
-        <li>Software
+        <li>Software / Tools
             <ul>
                 <li>
                     Sublime Text, Git, Android Studio, VIM, Eclipse, Microsoft Visual Studio 2012, Oracle RDBMS, MySQL Server, Adobe Photoshop
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <ul>
+        <li>Platforms
+            <ul>
+                <li>
+                    Heroku, Digital Ocean, AWS (EC2, ElasticBeanstalk, S3)
                 </li>
             </ul>
         </li>
@@ -138,5 +151,9 @@
             </ul>
         </li>
     </ul>
+</div>
+<div id="contact" class="section">
+    <h3 class="title">Send me a message</h3>
+    {% include 'forms/contact_form.html' %}
 </div>
 {% endblock %}

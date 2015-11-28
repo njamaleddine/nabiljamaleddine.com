@@ -1,0 +1,8 @@
+{% from "layouts/_formhelpers.html" import render_field %}
+<form method=post action="/">
+    {{ render_field(form.name) }}
+    {{ render_field(form.email) }}
+    {{ render_field(form.subject) }}
+    {{ render_field(form.message) }}
+    <input type=submit value=Submit>
+</form>

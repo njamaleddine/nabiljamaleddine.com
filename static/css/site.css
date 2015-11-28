@@ -1,11 +1,9 @@
 /*
     NabilJamaleddine.com stylesheet
 
-    Last Modified: Sunday August 4th, 2015
+    Last Modified: Sunday November 28th, 2015
     Developer: Nabil Jamaleddine
 */
-/* Bootstrap */
-/* Project Imports */
 /*
     Variables stylesheet
 */
@@ -30,8 +28,8 @@ a img {
   border: 0;
 }
 body {
-  background-color: #fff;
-  color: #222;
+  background-color: #ffffff;
+  color: #222222;
   font-family: "Roboto", Arial, sans-serif;
   font-size: 1em;
   margin: 0;
@@ -42,6 +40,27 @@ body > div,
 body > nav,
 body > footer {
   padding: 0px 20px;
+}
+@media (min-width: 500px) {
+  body > div,
+  body > nav,
+  body > footer {
+    padding: 20px;
+  }
+}
+@media (min-width: 700px) {
+  body > div,
+  body > nav,
+  body > footer {
+    padding: 20px 50px;
+  }
+}
+@media (min-width: 800px) {
+  body > div,
+  body > nav,
+  body > footer {
+    padding: 20px 100px;
+  }
 }
 a {
   color: #556655;
@@ -69,6 +88,11 @@ a:active {
   color: #7aaf7a;
   transition: color 0.05s ease-out;
 }
+/* Remove mac outline */
+input:focus,
+textarea:focus {
+  outline: none;
+}
 /*
     Mixins stylesheet
 */
@@ -77,7 +101,7 @@ a:active {
 }
 .title-text-clear {
   text-shadow: 1px 1px 2px #000;
-  font-size: 30px;
+  font-size: 32px;
   font-weight: 200;
   color: #ffffff;
 }
@@ -87,19 +111,76 @@ a:active {
 .underline {
   text-decoration: underline;
 }
+.form-field-input {
+  border: 0;
+  border-bottom: 1px solid #ececec;
+  color: #333333;
+  font-size: 22px;
+  font-weight: 200;
+  padding: 10px 0px;
+  width: 500px;
+}
+.form-field-input:focus {
+  border: 0;
+  border-bottom: 1px solid #aaccaa;
+}
 /*
     Forms stylesheet
 */
+form .form-field {
+  font-family: "Roboto", Arial, sans-serif;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+form .form-field label {
+  display: block;
+  font-size: 22px;
+  font-weight: 200;
+  text-transform: capitalize;
+}
+form .form-field input {
+  border: 0;
+  border-bottom: 1px solid #ececec;
+  color: #333333;
+  font-size: 22px;
+  font-weight: 200;
+  padding: 10px 0px;
+  width: 500px;
+}
+form .form-field input:focus {
+  border: 0;
+  border-bottom: 1px solid #aaccaa;
+}
+form .form-field textarea {
+  border: 0;
+  border-bottom: 1px solid #ececec;
+  color: #333333;
+  font-size: 22px;
+  font-weight: 200;
+  padding: 10px 0px;
+  width: 500px;
+  height: 100px;
+}
+form .form-field textarea:focus {
+  border: 0;
+  border-bottom: 1px solid #aaccaa;
+}
 /*
     Header stylesheet
 */
 nav {
-  margin-top: 25px;
-  padding-top: 15px;
   text-align: center;
+  padding-top: 25px !important;
+  padding-bottom: 25px !important;
+}
+@media (min-width: 800px) {
+  nav {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
 }
 nav .logo {
-  color: #333;
+  color: #333333;
   display: block;
   font-size: 34px;
   font-weight: 300;
@@ -107,7 +188,7 @@ nav .logo {
   text-decoration: none;
 }
 nav .subheading {
-  color: #333;
+  color: #333333;
   font-size: 25px;
   font-weight: 300;
 }
@@ -164,24 +245,33 @@ footer {
   background-position: center;
   background-size: cover;
   color: #dddddd;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 300;
-  min-height: 650px;
-  padding: 20px;
+  min-height: 770px;
 }
 #main .information {
-  margin-top: 50px;
+  margin-top: 100px;
+  padding-bottom: 50px;
 }
 #main .information .title {
   text-shadow: 1px 1px 2px #000;
-  font-size: 30px;
+  font-size: 32px;
   font-weight: 200;
   color: #ffffff;
 }
 #main .information .description {
   text-shadow: 1px 1px 2px #000;
+  letter-spacing: 1px;
+  line-height: 30px;
+  font-weight: 200;
 }
 @media (max-width: 500px) {
+  #main {
+    padding: 20px;
+  }
+  #main .information {
+    margin-top: 50px;
+  }
   #main .information div,
   #main .information p:not(.title),
   #main .information a {
