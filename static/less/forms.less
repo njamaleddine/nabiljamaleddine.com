@@ -8,9 +8,10 @@ form {
         letter-spacing: 1px;
 
         label {
+            .form-text;
+            color: @dark-gray;
             display: block;
-            font-size: 22px;
-            font-weight: 200;
+            font-weight: 300;
             text-transform: capitalize;
         }
 
@@ -20,10 +21,31 @@ form {
 
         textarea {
             .form-field-input;
-            height: 100px;
+            height: 3.5em;
         }
     }
     input[type="submit"] {
+        box-shadow: 0px 1px 1px #999;
+        background-color: @light-gray;
+        border: 0;
+        font-size: 22px;
+        font-weight: 200;
+        letter-spacing: 1px;
+        width: 100px;
+        height: 40px;
+        transition: background-color 0.2s ease-out, box-shadow 0.1s ease-out;
 
+        &:hover {
+            box-shadow: 0px 1px 1px #999;
+            background-color: lighten(@light-gray, 4%);
+            transition: background-color 0.2s ease-in, box-shadow 0.1s ease-in;
+
+        }
+
+        &:active {
+            box-shadow: 0px 1px 1px darken(#999, 5%);
+            background-color: darken(@light-gray, 5%);
+            transition: background-color 0.2s ease-out, box-shadow 0.1s ease-out;
+        }
     }
 }

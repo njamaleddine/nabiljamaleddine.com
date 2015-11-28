@@ -20,17 +20,41 @@
     text-decoration: underline;
 }
 
+.form-text {
+    // Used for maintaining uniform text across form elements
+    font-size: 16px;
+    font-weight: 200;
+
+    @media (min-width: 500px) {
+        font-size: 22px;
+    }
+}
+
 .form-field-input {
+    .form-text;
     border: 0;
     border-bottom: 1px solid @light-gray;
-    color: @dark-gray;
-    font-size: 22px;
-    font-weight: 200;
+    color: @body-gray;
     padding: 10px 0px;
-    width: 500px;
+    width: 100%;
 
     &:focus {
         border: 0;
-        border-bottom: 1px solid @link-green;
+        border-bottom: 1px solid @mid-gray;
     }
+
+    @media (min-width: 500px) {
+        max-width: 600px;
+    }
+
+}
+
+.form-field-input-error {
+    .form-field-input;
+    border-bottom: 1px solid @error-red;
+}
+
+.form-field-input-correct {
+    .form-field-input;
+    border-bottom: 1px solid @link-green;
 }

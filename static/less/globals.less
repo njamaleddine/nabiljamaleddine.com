@@ -15,6 +15,11 @@ a img {
     border: 0;
 }
 
+/* Remove blue outline on form fields on OS X */
+input:focus, textarea:focus {
+    outline: none;
+}
+
 body {
     background-color: @white;
     color: @body-gray;
@@ -66,9 +71,4 @@ a {
 
 .light-anchor {
     .transition-anchor (@link-green);
-}
-
-/* Remove mac outline */
-input:focus, textarea:focus {
-    outline: none;
 }
