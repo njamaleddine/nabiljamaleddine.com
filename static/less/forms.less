@@ -12,7 +12,12 @@ form {
             color: @dark-gray;
             display: block;
             font-weight: 300;
+            padding: 0;
             text-transform: capitalize;
+
+            @media (min-width: 500px) {
+                padding: 10px 0px;
+            }
         }
 
         input {

@@ -7,19 +7,21 @@ from wtforms import validators as wtfvalidators
 class ContactForm(Form):
     name = StringField(
         'name',
-        validators=[wtfvalidators.DataRequired()],
+        validators=[wtfvalidators.Required()],
     )
     email = EmailField(
-        'email', validators=[
-            wtfvalidators.DataRequired(),
+        'email',
+        validators=[
+            wtfvalidators.Required(),
             wtfvalidators.Email(message="Please enter a valid email address")
         ]
     )
     subject = StringField(
-        'subject', validators=[wtfvalidators.DataRequired()],
+        'subject',
+        validators=[wtfvalidators.Required()],
     )
     message = StringField(
         'message',
-        validators=[wtfvalidators.DataRequired()],
+        validators=[wtfvalidators.Required()],
         widget=widgets.TextArea()
     )

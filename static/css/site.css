@@ -205,11 +205,17 @@ form .form-field label {
   color: #333333;
   display: block;
   font-weight: 300;
+  padding: 0;
   text-transform: capitalize;
 }
 @media (min-width: 500px) {
   form .form-field label {
     font-size: 22px;
+  }
+}
+@media (min-width: 500px) {
+  form .form-field label {
+    padding: 10px 0px;
   }
 }
 form .form-field input {
