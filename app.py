@@ -30,7 +30,7 @@ app.config.update(
     MAIL_PASSWORD=os.environ.get('MAIL_PASSWORD', None),
     MAIL_MAX_EMAILS=os.environ.get('MAIL_MAX_EMAILS', None),
     MAIL_ASCII_ATTACHMENTS=os.environ.get('MAIL_ASCII_ATTACHMENTS', None),
-    MAIL_FAIL_SILENTLY=os.environ.get('MAIL_FAIL_SILENTLY', False)
+    MAIL_FAIL_SILENTLY=coerce_bool(os.environ.get('MAIL_FAIL_SILENTLY', False))
 )
 mail = Mail(app)
 
