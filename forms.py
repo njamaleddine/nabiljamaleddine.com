@@ -1,3 +1,5 @@
+from __future__ import print_function, unicode_literals
+
 from flask_wtf import Form
 from flask.ext.wtf.html5 import EmailField
 from wtforms import StringField, widgets
