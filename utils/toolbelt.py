@@ -6,6 +6,8 @@ from __future__ import print_function, unicode_literals
 import hashlib
 import os
 import re
+from lxml import html
+from lxml.html.clean import clean_html
 from datetime import datetime
 
 
@@ -69,6 +71,17 @@ def standardize_phone_number(phone_number):
             new_phone_number = u"{0}x{1}".format(new_phone_number, extension)
 
     return new_phone_number
+
+
+def strip_html(value):
+    """
+    Strip html tags from a value using lxml
+    """
+    document = html.fromstring(value)
+    tree = document.getroottree()
+    tree = clean_html(tree)
+    text = tree.getroot().text_content()
+    return text
 
 
 def load_env_file(file_name):
