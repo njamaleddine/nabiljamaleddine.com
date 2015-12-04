@@ -44,10 +44,11 @@ def index():
         # data sanitization
         name = strip_html(form.name.data)
         email = strip_html(form.email.data)
+        subject = strip_html(form.subject.data)
         message = strip_html(form.message.data)
 
         msg = Message(
-            form.subject.data,
+            subject,
             sender=app.config['MAIL_DEFAULT_SENDER'],
             recipients=[app.config['ADMIN_EMAIL']]
         )
