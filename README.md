@@ -6,7 +6,8 @@
 
 
 ### Project Dependencies
-1. Install homebrew package manager. On Linux use the included package manager `apt`, etc. Homebrew should make it very simple for us to install most of the project dependencies.
+1. Install homebrew package manager. On Linux use the included package manager `apt`, etc.
+On OS X, Homebrew makes it very simple for us to install many of the project dependencies.
 
 2. Install [git](https://git-scm.com/)
 
@@ -16,16 +17,11 @@
 
         `brew install python`
 
-
-4. Install [heroku toolbelt](https://toolbelt.heroku.com/)
-
-        `brew install heroku-toolbelt`
-
-5. Install [Foreman](http://ddollar.github.io/foreman/) (**Must have [Ruby](https://www.ruby-lang.org/en/) installed on machine**)
+4. Install [Foreman](http://ddollar.github.io/foreman/) (**Must have [Ruby](https://www.ruby-lang.org/en/) installed on machine**)
 
         `gem install foreman`
 
-6. Install [Virtualenvwrapper](https://virtualenvwrapper.readthedocs.org/en/latest/index.html)
+5. Install [Virtualenvwrapper](https://virtualenvwrapper.readthedocs.org/en/latest/index.html)
 
         `sudo pip install virtualenvwrapper`
 
@@ -50,10 +46,11 @@
 
 5. Copy `sample.env` to `.env`
 
+6. Set Up Mailgun account. You'll need to fill in `MAIL_USERNAME`, `MAIL_PASSWORD`
 
 ### Running Application
-##### Run as local application:
-    `foreman start -f Procfile.dev`
+##### Run as local flask server application:
+    `python app.py`
 
-##### Run as production application:
+##### Run as production application using `gunicorn`:
     `foreman start`
