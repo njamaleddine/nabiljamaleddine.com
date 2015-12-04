@@ -10,11 +10,10 @@ from utils.toolbelt import coerce_bool, coerce_int, load_env_file, strip_html
 
 from forms import ContactForm
 
+# Load environment variables
+load_env_file('.env')
 
 app = Flask(__name__)
-
-CsrfProtect(app)
-
 app.config.update(
     DEBUG=coerce_bool(os.environ.get('DEBUG', False)),
     SECRET_KEY=os.environ.get('SECRET_KEY', 'REPLACE_THIS'),
@@ -33,6 +32,7 @@ app.config.update(
     MAIL_FAIL_SILENTLY=coerce_bool(os.environ.get('MAIL_FAIL_SILENTLY', False))
 )
 mail = Mail(app)
+CsrfProtect(app)
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -66,5 +66,4 @@ def index():
 
 
 if __name__ == '__main__':
-    load_env_file('.env')
     app.run()
