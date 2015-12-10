@@ -1,0 +1,16 @@
+{
+  "name": "nabiljamaleddine.com",
+  "version": "0.0.1",
+  "description": "Nabil Jamaleddine's website",
+  "author": "Nabil Jamaleddine",
+  "dependencies": {
+    "jquery": "^2.1.4",
+    "jquery-validation": "^1.14.0"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/njamaleddine/nabiljamaleddine.git"
+  },
+  "license": "MIT"
+}
