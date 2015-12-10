@@ -18,15 +18,27 @@ form {
             @media (min-width: 500px) {
                 padding: 10px 0px;
             }
+
+            &.error {
+                font-size: 16px;
+            }
         }
 
         input {
             .form-field-input;
+
+            &.error {
+                border-bottom: 2px solid @error-red !important;
+            }
         }
 
         textarea {
             .form-field-input;
             height: 3.5em;
+
+            &.error {
+                border-bottom: 2px solid @error-red !important;
+            }
         }
     }
     input[type="submit"] {

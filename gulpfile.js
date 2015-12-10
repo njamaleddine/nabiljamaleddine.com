@@ -3,10 +3,10 @@
 var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
+var minifyCss = require('gulp-minify-css');
+var path = require('path');
 
-var DESTINATION = './static/js/';
-
-gulp.task('minify', function() {
+gulp.task('minify-js', function() {
     return gulp.src([
         './node_modules/jquery/dist/jquery.js',
         './node_modules/jquery-validation/dist/jquery.validate.js',
@@ -14,5 +14,14 @@ gulp.task('minify', function() {
         ])
         .pipe(concat('index.min.js'))
         .pipe(uglify())
-        .pipe(gulp.dest(DESTINATION));
+        .pipe(gulp.dest('./static/js/'));
 });
+
+gulp.task('minify-css', function() {
+  return gulp.src('./static/css/site.css')
+    .pipe(concat('site.min.css'))
+    .pipe(minifyCss({compatibility: 'ie8'}))
+    .pipe(gulp.dest('./static/css/'));
+});
+
+gulp.task('minify', ['minify-js', 'minify-css']);

@@ -54,12 +54,15 @@ On OS X, Homebrew makes it very simple for us to install many of the project dep
 
 ### Running Application
 ##### Run as local flask server application:
-    `python app.py`
+        `python app.py`
 
 ##### Run as production application using `gunicorn`:
-    `foreman start`
+        `foreman start`
 
 
-### Minification
-##### Gulp is being used to minify the js. To use the `minify` task:
-    `gulp minify`
+### Static File Management
+1. Compile `less` into `css`:
+        `lessc static/less/site.less > static/css/site.css`
+
+2. Use gulp to minify the js and css:
+        `gulp minify`

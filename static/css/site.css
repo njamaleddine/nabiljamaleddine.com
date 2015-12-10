@@ -124,7 +124,7 @@ a:active {
   font-size: 16px;
   font-weight: 200;
   border: 0;
-  border-bottom: 1px solid #ececec;
+  border-bottom: 1px solid #aaccaa;
   color: #222222;
   font-family: "Roboto", Arial, sans-serif;
   padding: 10px 0px;
@@ -141,56 +141,6 @@ a:active {
 }
 @media (min-width: 500px) {
   .form-field-input {
-    max-width: 600px;
-  }
-}
-.form-field-input-error {
-  font-size: 16px;
-  font-weight: 200;
-  border: 0;
-  border-bottom: 1px solid #ececec;
-  color: #222222;
-  font-family: "Roboto", Arial, sans-serif;
-  padding: 10px 0px;
-  width: 100%;
-  border-bottom: 1px solid #ffaaaa;
-}
-@media (min-width: 500px) {
-  .form-field-input-error {
-    font-size: 22px;
-  }
-}
-.form-field-input-error:focus {
-  border: 0;
-  border-bottom: 1px solid #cccccc;
-}
-@media (min-width: 500px) {
-  .form-field-input-error {
-    max-width: 600px;
-  }
-}
-.form-field-input-correct {
-  font-size: 16px;
-  font-weight: 200;
-  border: 0;
-  border-bottom: 1px solid #ececec;
-  color: #222222;
-  font-family: "Roboto", Arial, sans-serif;
-  padding: 10px 0px;
-  width: 100%;
-  border-bottom: 1px solid #aaccaa;
-}
-@media (min-width: 500px) {
-  .form-field-input-correct {
-    font-size: 22px;
-  }
-}
-.form-field-input-correct:focus {
-  border: 0;
-  border-bottom: 1px solid #cccccc;
-}
-@media (min-width: 500px) {
-  .form-field-input-correct {
     max-width: 600px;
   }
 }
@@ -221,11 +171,14 @@ form .form-field label {
     padding: 10px 0px;
   }
 }
+form .form-field label.error {
+  font-size: 16px;
+}
 form .form-field input {
   font-size: 16px;
   font-weight: 200;
   border: 0;
-  border-bottom: 1px solid #ececec;
+  border-bottom: 1px solid #aaccaa;
   color: #222222;
   font-family: "Roboto", Arial, sans-serif;
   padding: 10px 0px;
@@ -245,11 +198,14 @@ form .form-field input:focus {
     max-width: 600px;
   }
 }
+form .form-field input.error {
+  border-bottom: 2px solid #ffaaaa !important;
+}
 form .form-field textarea {
   font-size: 16px;
   font-weight: 200;
   border: 0;
-  border-bottom: 1px solid #ececec;
+  border-bottom: 1px solid #aaccaa;
   color: #222222;
   font-family: "Roboto", Arial, sans-serif;
   padding: 10px 0px;
@@ -269,6 +225,9 @@ form .form-field textarea:focus {
   form .form-field textarea {
     max-width: 600px;
   }
+}
+form .form-field textarea.error {
+  border-bottom: 2px solid #ffaaaa !important;
 }
 form input[type="submit"] {
   box-shadow: 0px 1px 1px #999;
