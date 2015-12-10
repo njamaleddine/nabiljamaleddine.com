@@ -27,6 +27,10 @@ On OS X, Homebrew makes it very simple for us to install many of the project dep
 
     * Note: **Don't install any other dependencies using `sudo` after this. [Read more about virtual environments here](http://docs.python-guide.org/en/latest/dev/virtualenvs/)**
 
+6. Install [node](https://nodejs.org/en/)
+        `brew install node`
+
+
 ### Project Setup
 1. Clone repository:
 
@@ -54,3 +58,8 @@ On OS X, Homebrew makes it very simple for us to install many of the project dep
 
 ##### Run as production application using `gunicorn`:
     `foreman start`
+
+
+### Minification
+##### Gulp is being used to minify the js. To use the `minify` task:
+    `gulp minify`

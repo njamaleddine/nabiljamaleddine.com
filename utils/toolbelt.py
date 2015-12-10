@@ -35,6 +35,18 @@ def coerce_int(value):
     return False
 
 
+def get_env(key, default=None):
+    """ Get an environment variable and coerce it's type """
+    value = None
+    if isinstance(default, int):
+        value = coerce_int(os.environ.get(key, default))
+    elif isinstance(default, bool):
+        value = coerce_bool(os.environ.get(key, default))
+    else:
+        value = os.environ.get(key, default)
+    return value
+
+
 def generate_date_hash():
     """
     Generate a hashed date of the current time

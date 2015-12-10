@@ -10,7 +10,12 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/njamaleddine/nabiljamaleddine.git"
+    "url": "git@github.com:njamaleddine/nabiljamaleddine.com.git"
   },
-  "license": "MIT"
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.1"
+  }
 }
