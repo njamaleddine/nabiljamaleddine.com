@@ -1,13 +1,16 @@
 # -*- coding: utf-8 -*-
 from __future__ import print_function, unicode_literals
 
-from flask import Flask, render_template, url_for, redirect, request
+import json
+
+from flask import Flask, render_template, url_for, redirect, request, abort
 from flask_mail import Mail, Message
 from flask_wtf.csrf import CsrfProtect
 
-from utils.toolbelt import get_env, load_env_file, strip_html
+from markdown import Markdown
 
 from forms import ContactForm
+from utils.toolbelt import get_env, load_env_file, strip_html
 
 
 # Load environment variables
@@ -65,6 +68,37 @@ def index():
         return redirect(url_for('index'))
     return render_template('index.html', form=form)
 
+
+@app.route('/blog', methods=['GET'])
+def blog():
+    """ Display all blog posts from a static json file """
+    posts = []
+    with open('static/blog/_posts.json') as json_file:
+        posts = json.load(json_file)
+    return render_template('blog.html', posts=posts)
+
+
+@app.route('/blog/<slug>', methods=['GET'])
+def blog_post(slug):
+    """
+    Return a single blog post and read the content from a markdown file
+
+    blog post slugs are unique, the first post found containing a slug is returned.
+    """
+    with open('static/blog/_posts.json') as json_file:
+        context = {
+            'page': 'blog_post'
+        }
+        posts = json.load(json_file)
+        for post in posts:
+            if post.get('slug') == slug:
+                context['post'] = post
+                post_markdown_file_path = 'static/blog/{}.md'.format(slug)
+                with open(post_markdown_file_path) as post_content:
+                    # convert blog post markdown into html
+                    post['content'] = Markdown().convert(post_content.read())
+                return render_template('blog_post.html', **context)
+        abort(404)
 
 if __name__ == '__main__':
     app.run()

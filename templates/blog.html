@@ -1,0 +1,10 @@
+{% extends 'layouts/base.html' %}
+{% block body %}
+<div id="blog">
+    {% for post in posts %}
+        {% include '/layouts/_blog_post_detail.html' %}
+        <hr/>
+    {% endfor %}
+</div>
+
+{% endblock %}
