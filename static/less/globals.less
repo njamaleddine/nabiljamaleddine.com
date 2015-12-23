@@ -4,6 +4,7 @@
 
 /*@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,400italic);*/
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700,400italic,300italic,500,500italic,300,100);
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
 
 /* Make HTML 5 elements display block-level for consistent styling */
 header, nav, section, footer, address, article {
@@ -72,3 +73,32 @@ a {
 .light-anchor {
     .transition-anchor (@link-green);
 }
+
+hr {
+    border: 0;
+    border-bottom: 1px solid #eee;
+}
+
+p {
+    code {
+        padding: 3px;
+    }
+}
+
+pre, code {
+    background-color: @code-background;
+    font-size: 14px;
+    padding: 20px;
+    overflow-x: auto;  // this might be a horrible idea
+    // font-family: @source-code-pro;
+
+    code {
+        // Remove padding for nested objects
+        padding: 0;
+    }
+
+    @media(min-width: 700px) {
+        font-size: 18px;
+    }
+}
+

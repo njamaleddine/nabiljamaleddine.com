@@ -41,7 +41,10 @@ CsrfProtect(app)
 @app.route('/', methods=['GET', 'POST'])
 def index():
     """ Homepage """
-    form = ContactForm(request.form)
+    context = {
+        'page': 'index'
+    }
+    context['form'] = form = ContactForm(request.form)
 
     if request.method == 'POST' and form.validate():
         # data sanitization
@@ -72,10 +75,13 @@ def index():
 @app.route('/blog', methods=['GET'])
 def blog():
     """ Display all blog posts from a static json file """
-    posts = []
+    context = {
+        'page': 'blog'
+    }
+    context['posts'] = []
     with open('static/blog/_posts.json') as json_file:
-        posts = json.load(json_file)
-    return render_template('blog.html', posts=posts)
+        context['posts'] = json.load(json_file)
+    return render_template('blog.html', **context)
 
 
 @app.route('/blog/<slug>', methods=['GET'])
@@ -83,12 +89,12 @@ def blog_post(slug):
     """
     Return a single blog post and read the content from a markdown file
 
-    blog post slugs are unique, the first post found containing a slug is returned.
+    Blog post slugs are unique
     """
+    context = {
+        'page': 'blog_post'
+    }
     with open('static/blog/_posts.json') as json_file:
-        context = {
-            'page': 'blog_post'
-        }
         posts = json.load(json_file)
         for post in posts:
             if post.get('slug') == slug:
@@ -96,7 +102,12 @@ def blog_post(slug):
                 post_markdown_file_path = 'static/blog/{}.md'.format(slug)
                 with open(post_markdown_file_path) as post_content:
                     # convert blog post markdown into html
-                    post['content'] = Markdown().convert(post_content.read())
+                    post['content'] = Markdown(
+                        extensions=[
+                            'markdown.extensions.fenced_code',
+                            'markdown.extensions.codehilite'
+                        ]
+                    ).convert(post_content.read())
                 return render_template('blog_post.html', **context)
         abort(404)
 

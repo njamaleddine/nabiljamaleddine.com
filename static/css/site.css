@@ -14,6 +14,7 @@
 */
 /*@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,400italic);*/
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700,400italic,300italic,500,500italic,300,100);
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
 /* Make HTML 5 elements display block-level for consistent styling */
 header,
 nav,
@@ -92,6 +93,30 @@ a:active {
 .light-anchor:active {
   color: #7aaf7a;
   transition: color 0.05s ease-out;
+}
+hr {
+  border: 0;
+  border-bottom: 1px solid #eee;
+}
+p code {
+  padding: 3px;
+}
+pre,
+code {
+  background-color: #efefef;
+  font-size: 14px;
+  padding: 20px;
+  overflow-x: auto;
+}
+pre code,
+code code {
+  padding: 0;
+}
+@media (min-width: 700px) {
+  pre,
+  code {
+    font-size: 18px;
+  }
 }
 /*
     Mixins stylesheet
@@ -407,4 +432,62 @@ footer {
   #skillset {
     font-size: 16px;
   }
+}
+#blog {
+  background: #f5f8fa;
+  color: #222222;
+  font-size: 22px;
+  min-height: 770px;
+}
+#blog .post {
+  margin-top: 0;
+  padding: 20px 0px;
+}
+#blog .post .title {
+  font-size: 1.5em;
+}
+.post {
+  color: #8D9AB3;
+  font-weight: 300;
+  font-size: 16px;
+  padding: 20px;
+  margin-top: -60px;
+}
+.post > div {
+  margin-bottom: 1.5em;
+}
+@media (min-width: 500px) {
+  .post {
+    font-size: 18px;
+  }
+}
+@media (min-width: 700px) {
+  .post {
+    padding: 20px 50px;
+  }
+}
+@media (min-width: 800px) {
+  .post {
+    padding: 20px 100px;
+  }
+}
+.post .title {
+  font-size: 2em;
+  font-weight: 300;
+}
+.post .title a {
+  border-bottom: 1px solid #333333;
+  color: #333333;
+  text-decoration: none;
+}
+.post .title a:hover {
+  color: #666666;
+}
+.post .summary,
+.post .content {
+  color: #444;
+}
+.post .publish-details {
+  font-size: 18px;
+  color: #8D9AB3;
 }

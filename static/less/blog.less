@@ -1,0 +1,77 @@
+#blog {
+    background: #f5f8fa;
+    color: @body-gray;
+    font-size: 22px;
+    min-height: 770px;
+
+    .post {
+        margin-top: 0;
+        padding: 20px 0px;
+
+        .title {
+            font-size: 1.5em;
+        }
+    }
+}
+.post {
+    color: #8D9AB3;
+    font-weight: 300;
+    font-size: 16px;
+    padding: 20px;
+    margin-top: -60px;  // We should be avoiding negative margins, oh well
+
+    & > div {
+        margin-bottom: 1.5em;
+    }
+
+    @media (min-width: 500px) {
+        font-size: 18px;
+    }
+
+    @media (min-width: 700px) {
+        padding: 20px 50px;
+    }
+
+    @media (min-width: 800px) {
+        padding: 20px 100px;
+    }
+
+    .title {
+        font-size: 2em;
+        font-weight: 300;
+
+        a {
+            border-bottom: 1px solid @dark-gray;
+            color: @dark-gray;
+            text-decoration: none;
+
+            &:hover {
+                color: lighten(@dark-gray, 20%)
+            }
+        }
+    }
+
+    .summary, .content {
+        color: #444;
+    }
+
+    .publish-details {
+        font-size: 18px;
+        color: #8D9AB3;
+
+        .author {
+
+        }
+
+        .date-created {
+
+        }
+
+        .tags {
+            .tag {
+
+            }
+        }
+    }
+
+}
