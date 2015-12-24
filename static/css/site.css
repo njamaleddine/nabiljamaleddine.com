@@ -34,7 +34,7 @@ textarea:focus {
   outline: none;
 }
 body {
-  background-color: #ffffff;
+  background-color: #fcfcfc;
   color: #222222;
   font-family: "Roboto", Arial, sans-serif;
   font-size: 1em;
@@ -148,6 +148,7 @@ code code {
 .form-field-input {
   font-size: 16px;
   font-weight: 200;
+  background: none;
   border: 0;
   border-bottom: 1px solid #aaccaa;
   color: #222222;
@@ -202,6 +203,7 @@ form .form-field label.error {
 form .form-field input {
   font-size: 16px;
   font-weight: 200;
+  background: none;
   border: 0;
   border-bottom: 1px solid #aaccaa;
   color: #222222;
@@ -229,6 +231,7 @@ form .form-field input.error {
 form .form-field textarea {
   font-size: 16px;
   font-weight: 200;
+  background: none;
   border: 0;
   border-bottom: 1px solid #aaccaa;
   color: #222222;
@@ -306,6 +309,7 @@ nav .navigation {
   display: inline-block;
   list-style: none;
   padding-left: 0px;
+  margin: 0;
 }
 nav .navigation li {
   float: left;
@@ -315,6 +319,10 @@ nav .navigation li {
 }
 nav .navigation li:last-of-type {
   padding-right: 0;
+}
+nav .navigation li a {
+  font-weight: 300;
+  text-decoration: none;
 }
 @media (min-width: 400px) {
   nav .logo {
@@ -482,6 +490,9 @@ footer {
 }
 .post .title a:hover {
   color: #666666;
+}
+.post h2 {
+  margin-top: 40px;
 }
 .post .summary,
 .post .content {

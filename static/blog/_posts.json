@@ -1,5 +1,16 @@
 [
     {
+        "id": 3,
+        "title": "Don't skip out on documentation",
+        "author": "Nabil Jamaleddine",
+        "slug": "dont-skip-out-on-documentation",
+        "summary": "More often than not I've worked on projects that to my dismay had limited to no documentation. Some projects didn't even include README files (sounds great right?). You can't always control the code that you inherit, whether it's legacy code in your own organization or an open source project. You can however make everyone else's lives easier by including some form of documentation.",
+        "created": "2015-12-24",
+        "modified": "2015-12-26",
+        "published": "2015-12-26",
+        "tags": ["documentation", "comments", "development"]
+    },
+    {
         "id": 2,
         "title": "Using Multiple Buildpacks on Heroku",
         "author": "Nabil Jamaleddine",
@@ -7,6 +18,7 @@
         "summary": "Using custom libraries is possible through the declaration of custom buildpacks. David Dollar created the awesome [heroku-buildpack-multi](https://github.com/ddollar/heroku-buildpack-multi) repository for the purpose of including multiple buildpacks in the build process.",
         "created": "2015-12-23",
         "modified": "2015-12-23",
+        "published": "2015-12-23",
         "tags": ["heroku", "buildpacks", "heroku-buildpack-multi"]
     },
     {
@@ -17,6 +29,7 @@
         "summary": "If you're a minecraft enthusiast like myself you've probably spent countless hours building structures, spelunking, or just trying to survive a zombie raid through the night. If you're an avid fan and haven't already set up your own server to play with a couple of friends get on it.",
         "created": "2015-12-19",
         "modified": "2015-12-19",
-        "tags": ["minecraft", "digital ocean", "ubuntu"]
+        "published": "2015-12-19",
+        "tags": ["minecraft", "digitalocean", "ubuntu"]
     }
 ]
