@@ -54,7 +54,7 @@ On OS X, Homebrew makes it very simple for us to install many of the project dep
 
 ### Running Application
 ##### Run as local flask server application:
-    python app.py
+    python run.py
 
 ##### Run as production application using `gunicorn`:
     foreman start
