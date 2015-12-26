@@ -1,4 +1,5 @@
-from __future__ import print_function, unicode_literals
+# -*- coding: utf-8 -*-
+from __future__ import print_function, unicode_literals, absolute_import
 
 from flask_wtf import Form
 from flask.ext.wtf.html5 import EmailField

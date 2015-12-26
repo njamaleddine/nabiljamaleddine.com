@@ -5,7 +5,8 @@
   "author": "Nabil Jamaleddine",
   "dependencies": {
     "jquery": "^2.1.4",
-    "jquery-validation": "^1.14.0"
+    "jquery-validation": "^1.14.0",
+    "moment": "^2.10.6"
   },
   "private": true,
   "repository": {

@@ -2,7 +2,7 @@
 """ Useful utility functions """
 
 # Python modules
-from __future__ import print_function, unicode_literals
+from __future__ import print_function, unicode_literals, absolute_import
 
 import hashlib
 import os
@@ -58,11 +58,14 @@ def generate_date_hash():
     return hashed_date
 
 
-def strip_non_alphanumeric(string):
+def strip_non_alphanumeric(string, replace='', lowercase=False):
     """ Strip non alphanumeric characters """
     non_alpha_numeric = re.compile(r'[^0-9a-zA-Z]+')
+    result_string = non_alpha_numeric.sub(replace, string)
 
-    return non_alpha_numeric.sub('', string)
+    if lowercase:
+        result_string = result_string.lower()
+    return result_string
 
 
 def standardize_phone_number(phone_number):

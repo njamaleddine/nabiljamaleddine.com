@@ -1,4 +1,4 @@
-# Don't skip out on documentation
+<!-- # Don't skip out on documentation -->
 
 More often than not I've worked on projects that, to my dismay, had limited to no documentation. Some projects didn't even include README files (fun experience when you're trying to get a custom project running). You can't always control the code that you inherit, whether it's legacy code in your own organization or an open source project. You can however make everyone else's lives easier by including some form of documentation.
 
@@ -42,7 +42,7 @@ If the code is very clear and obvious, you shouldn't include a comment:
 Example of a poor `inline comment` in JavaScript:
 ```javascript
 function addOne(x){
-  x = x + 1  // Increment x by 1
+  x = x + 1;  // Increment x by 1
   return x;
 }
 ```

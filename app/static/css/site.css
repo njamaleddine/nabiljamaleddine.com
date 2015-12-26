@@ -118,6 +118,26 @@ code code {
     font-size: 18px;
   }
 }
+/* Code highlighting */
+.codehilite .k,
+.codehilite .kd {
+  color: #aa33bb;
+}
+.codehilite .nf,
+.codehilite .nx {
+  color: #1144aa;
+}
+.codehilite .n,
+.codehilite .mi {
+  color: #cc8616;
+}
+.codehilite .c,
+.codehilite .c1 {
+  color: #888;
+}
+.codehilite .o {
+  color: #b22222;
+}
 /*
     Mixins stylesheet
 */

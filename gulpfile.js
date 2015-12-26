@@ -10,7 +10,7 @@ gulp.task('minify-js', function() {
     return gulp.src([
         './node_modules/jquery/dist/jquery.js',
         './node_modules/jquery-validation/dist/jquery.validate.js',
-        './static/js/form-validation.js'
+        './app/static/js/form-validation.js'
         ])
         .pipe(concat('index.min.js'))
         .pipe(uglify())
@@ -18,10 +18,10 @@ gulp.task('minify-js', function() {
 });
 
 gulp.task('minify-css', function() {
-  return gulp.src('./static/css/site.css')
+  return gulp.src('./app/static/css/site.css')
     .pipe(concat('site.min.css'))
     .pipe(minifyCss({compatibility: 'ie8'}))
-    .pipe(gulp.dest('./static/css/'));
+    .pipe(gulp.dest('./app/static/css/'));
 });
 
 gulp.task('minify', ['minify-js', 'minify-css']);
