@@ -14,7 +14,7 @@ gulp.task('minify-js', function() {
         ])
         .pipe(concat('index.min.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('./static/js/'));
+        .pipe(gulp.dest('./app/static/js/'));
 });
 
 gulp.task('minify-css', function() {

@@ -1,7 +1,7 @@
 /*
     NabilJamaleddine.com stylesheet
 
-    Last Modified: Sunday November 28th, 2015
+    Last Modified: Sunday December 27th, 2015
     Developer: Nabil Jamaleddine
 */
 /*
@@ -14,7 +14,6 @@
 */
 /*@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,400italic);*/
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700,400italic,300italic,500,500italic,300,100);
-@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
 /* Make HTML 5 elements display block-level for consistent styling */
 header,
 nav,
@@ -97,46 +96,6 @@ a:active {
 hr {
   border: 0;
   border-bottom: 1px solid #eee;
-}
-p code {
-  padding: 3px;
-}
-pre,
-code {
-  background-color: #efefef;
-  font-size: 14px;
-  padding: 20px;
-  overflow-x: auto;
-}
-pre code,
-code code {
-  padding: 0;
-}
-@media (min-width: 700px) {
-  pre,
-  code {
-    font-size: 18px;
-  }
-}
-/* Code highlighting */
-.codehilite .k,
-.codehilite .kd {
-  color: #aa33bb;
-}
-.codehilite .nf,
-.codehilite .nx {
-  color: #1144aa;
-}
-.codehilite .n,
-.codehilite .mi {
-  color: #cc8616;
-}
-.codehilite .c,
-.codehilite .c1 {
-  color: #888;
-}
-.codehilite .o {
-  color: #b22222;
 }
 /*
     Mixins stylesheet
@@ -297,6 +256,48 @@ form input[type="submit"]:active {
   box-shadow: 0px 1px 1px #8c8c8c;
   background-color: #dfdfdf;
   transition: background-color 0.2s ease-out, box-shadow 0.1s ease-out;
+}
+/*
+    Code highlighting
+*/
+p code {
+  padding: 3px;
+}
+pre,
+code {
+  background-color: #efefef;
+  font-size: 14px;
+  padding: 20px;
+  overflow-x: auto;
+}
+pre code,
+code code {
+  padding: 0;
+}
+@media (min-width: 700px) {
+  pre,
+  code {
+    font-size: 18px;
+  }
+}
+.codehilite .k,
+.codehilite .kd {
+  color: #aa33bb;
+}
+.codehilite .nf,
+.codehilite .nx {
+  color: #1144aa;
+}
+.codehilite .n,
+.codehilite .mi {
+  color: #cc8616;
+}
+.codehilite .c,
+.codehilite .c1 {
+  color: #888;
+}
+.codehilite .o {
+  color: #b22222;
 }
 /*
     Header stylesheet
@@ -461,6 +462,9 @@ footer {
     font-size: 16px;
   }
 }
+/*
+    Blog and single blog post stylesheet
+*/
 #blog {
   background: #f5f8fa;
   color: #222222;

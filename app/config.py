@@ -37,7 +37,8 @@ app.config.update(
     MAIL_FAIL_SILENTLY=get_env('MAIL_FAIL_SILENTLY', False),
     SQLALCHEMY_DATABASE_URI='sqlite:///{}'.format(
         os.path.join(BASE_DIR, 'app.db')
-    )
+    ),
+    SQLALCHEMY_TRACK_MODIFICATIONS=get_env('DEBUG', False)
 )
 mail = Mail(app)
 CsrfProtect(app)
