@@ -1,5 +1,7 @@
 <!-- # Using Multiple Buildpacks on Heroku -->
 
+![heroku](/static/blog/images/heroku_buildpacks.png)
+
 While setting up an application to use [Postgis](http://postgis.net/) on [Heroku](https://www.heroku.com/) I realized that Postgis wasn't installed by default.
 
 Using custom libraries is possible through the declaration of custom buildpacks. David Dollar created the awesome [heroku-buildpack-multi](https://github.com/ddollar/heroku-buildpack-multi) repository for the purpose of including multiple buildpacks in the build process.
