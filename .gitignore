@@ -4,5 +4,6 @@
 *.xcf
 *.psd
 *.pyc
+*.db
 nabiljamaleddine.conf
 node_modules
