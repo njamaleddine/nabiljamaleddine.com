@@ -1,4 +1,5 @@
 <!-- # Checking if a object exists on save in Django -->
+<!-- Published: 2016-06-01 -->
 
 Having used integer primary keys for many projects, I've only recently switched over to using UUIDs on a few projects about a little less than a year ago. In the switch, an old solution I've often used for checking if an object exists, or is being created, has become obsolete.
 

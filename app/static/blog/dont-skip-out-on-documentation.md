@@ -1,4 +1,5 @@
 <!-- # Don't skip out on documentation -->
+<!-- Published: 2015-12-26 -->
 
 More often than not I've worked on projects that, to my dismay, had limited to no documentation. Some projects didn't even include README files (fun experience when you're trying to get a custom project running). You can't always control the code that you inherit, whether it's legacy code in your own organization or an open source project. You can however make everyone else's lives easier by including some form of documentation.
 

@@ -1,4 +1,5 @@
 <!-- # Setting up a Minecraft Server on Ubuntu 14.04 -->
+<!-- Published: 2015-12-19 -->
 
 If you're a minecraft enthusiast like myself you've probably spent countless hours building structures, spelunking, or just trying to survive a zombie raid through the night. If you're an avid fan and haven't already set up your own server to play with a couple of friends get on it.
 
