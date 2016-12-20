@@ -4,119 +4,39 @@
     <div id="bio" class="information">
         <p class="title">Who am I?</p>
         <p class="description">
-            I'm a fullstack developer currently employed at the design and development consultancy JAKT where I've developed dozens of applications in social, ecommerce, data mining, custom content management solutions, education, and entertainment. My core stack consists of Django, PostgreSQL, JavaScript, Sass, and HTML5. Although most of my work involves the server side, I embrace all aspects of the development process including frontend and devops.
+            I'm a fullstack developer who's developed dozens of applications in social, ecommerce, data mining, custom content management solutions, education, and entertainment. Although most of my work involves the server side building out RESTful APIs and architechting databases, I've also been involved in other aspects of development including frontend and devops.
         </p>
         <p class="description">
-            When I'm not developing RESTful APIs, building web applications, and architechting databases, I enjoy browsing hacker news and reddit to catch up on some of the latest news on software and technology.
+            When I'm not coding, I enjoy exploring the culinary world, craft beer, and martial arts.
         </p>
-        <p class="description">
-            A strong, frothy cup of coffee is my most important development tool.
-        </p>
-        <a href="#skillset" class="light-anchor">Read More about my skill set</a>
     </div>
-    <div class="information">
-        <p class="title">What else is out there?</p>
-        <a href="https://github.com/njamaleddine" target="_blank" class="light-anchor">Github</a>
-        <a href="https://www.linkedin.com/in/nabil-jamaleddine-07094240" target="_blank" class="light-anchor">LinkedIn</a>
+
+    <div id="experience" class="information">
+        <p class="title">Experience</p>
+        <ul class="description">
+            <li>Python
+                <ul>
+                    <li>Django, REST Framework, Celery, pytest, mock</li>
+                </ul>
+            </li>
+            <li>JavaScript
+                <ul>
+                    <li>Node.js, jQuery</li>
+                </ul>
+            </li>
+            <li>Java
+                <ul>
+                    <li>Android SDK</li>
+                </ul>
+            </li>
+            <li>AWS
+                <ul>
+                    <li>EC2, RDS (PostgreSQL), Elasticache, EBS, S3</li>
+                </ul>
+            </li>
+            <li>Heroku</li>
+            <li>HTML, CSS</li>
+        </ul>
     </div>
-</div>
-
-<div id="skillset" class="section">
-    <h3 class="title">Skill set</h3>
-    <p class="description">A few tools in my toolbox</p>
-    <ul class="skills">
-        <li>Languages
-            <ul>
-                <li>Python
-                    <ul>
-                        <li>Django</li>
-                        <li>Django REST Framework</li>
-                        <li>Celery</li>
-                        <li>Flask</li>
-                        <li>pytest</li>
-                        <li>unittest.mock</li>
-                    </ul>
-                </li>
-                <li>JavaScript
-                    <ul>
-                        <li>Node.js</li>
-                        <li>jQuery</li>
-                    </ul>
-                </li>
-                <li>Java
-                    <ul>
-                        <li>Android SDK</li>
-                    </ul>
-                </li>
-                <li>C++</li>
-                <li>PHP</li>
-            </ul>
-        </li>
-    </ul>
-    <ul>
-        <li>Relational Databases
-            <ul>
-                <li>
-                    PostgreSQL
-                </li>
-                <li>
-                    MySQL
-                </li>
-                <li>
-                    Oracle SQL
-                </li>
-                <li>
-                    SQLite
-                </li>
-            </ul>
-        </li>
-    </ul>
-    <ul>
-        <li>Key Value Stores / Queues
-            <ul>
-                <li>
-                    Redis
-                </li>
-                <li>
-                    RabbitMQ
-                </li>
-            </ul>
-        </li>
-    </ul>
-    <ul>
-        <li>Markup / Stylesheets / Frontend Frameworks
-            <ul>
-                <li>
-                    HTML5
-                </li>
-                <li>
-                    CSS3 (LESS and SASS)
-                </li>
-                <li>
-                    Bootstrap
-                </li>
-            </ul>
-        </li>
-    </ul>
-    <ul>
-        <li>Platforms
-            <ul>
-                <li>
-                    Heroku
-                </li>
-                <li>
-                    AWS
-                </li>
-                <li>
-                    Digital Ocean
-                </li>
-            </ul>
-        </li>
-    </ul>
-</div>
-
-<div id="contact" class="section">
-    <h3 class="title">Send me a message</h3>
-    {% include 'forms/contact_form.html' %}
 </div>
 {% endblock %}

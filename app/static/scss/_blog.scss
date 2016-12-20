@@ -4,7 +4,7 @@
 
 #blog {
     background: #f5f8fa;
-    color: @body-gray;
+    color: $body-gray;
     font-size: 22px;
     min-height: 770px;
 
@@ -45,12 +45,12 @@
         font-weight: 300;
 
         a {
-            border-bottom: 1px solid @dark-gray;
-            color: @dark-gray;
+            border-bottom: 1px solid $dark-gray;
+            color: $dark-gray;
             text-decoration: none;
 
             &:hover {
-                color: lighten(@dark-gray, 20%)
+                color: lighten($dark-gray, 20%)
             }
         }
     }

@@ -7,10 +7,10 @@
 }
 
 .title-text-clear {
-    .shadowed-text;
+    @extend .shadowed-text;
     font-size: 32px;
     font-weight: 200;
-    color: @white;
+    color: $white;
 }
 
 .cross-out {
@@ -32,18 +32,18 @@
 }
 
 .form-field-input {
-    .form-text;
+    @extend .form-text;
     background: none;
     border: 0;
-    border-bottom: 1px solid @link-green;
-    color: @body-gray;
-    font-family: @roboto;
+    border-bottom: 1px solid $link-green;
+    color: $body-gray;
+    font-family: $roboto;
     padding: 10px 0px;
     width: 100%;
 
     &:focus {
         border: 0;
-        border-bottom: 1px solid @mid-gray;
+        border-bottom: 1px solid $mid-gray;
     }
 
     @media (min-width: 500px) {

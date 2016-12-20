@@ -24,4 +24,9 @@ gulp.task('minify-css', function() {
     .pipe(gulp.dest('./app/static/css/'));
 });
 
-gulp.task('minify', ['minify-js', 'minify-css']);
+gulp.task('copy-fonts-to-static', function(){
+  gulp.src(['./node_modules/font-awesome/fonts/*'])
+  .pipe(gulp.dest('./app/static/vendor/fonts/font-awesome'));
+});
+
+gulp.task('minify', ['minify-js', 'minify-css', 'copy-fonts-to-static']);

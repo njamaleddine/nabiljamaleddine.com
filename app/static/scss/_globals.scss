@@ -22,9 +22,9 @@ input:focus, textarea:focus {
 }
 
 body {
-    background-color: @print-white;
-    color: @body-gray;
-    font-family: @roboto;
+    background-color: $print-white;
+    color: $body-gray;
+    font-family: $roboto;
     font-size: 1em;
     margin: auto;
     margin: 0;
@@ -50,28 +50,28 @@ body {
     }
 }
 
-.transition-anchor (@color: @dark-link-green) {
-    color: @color;
+@mixin transition-anchor($color: $dark-link-green) {
+    color: $color;
     transition: color 0.2s ease-out;
     text-decoration: underline;
 
     &:hover {
-        color: lighten(@color, 15%);
+        color: lighten($color, 15%);
         transition: color 0.2s ease-in;
     }
 
     &:active {
-        color: darken(@color, 15%);
+        color: darken($color, 15%);
         transition: color 0.05s ease-out;
     }
 }
 
 a {
-    .transition-anchor (@dark-link-green);
+    @include transition-anchor($dark-link-green);
 }
 
 .light-anchor {
-    .transition-anchor (@link-green);
+    @include transition-anchor($link-green);
 }
 
 hr {

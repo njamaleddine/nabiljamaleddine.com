@@ -61,9 +61,9 @@ On OS X, Homebrew makes it very simple for us to install many of the project dep
 
 
 ### Static File Management
-1. Compile `less` into `css`:
+1. Compile `scss` into `css`:
 
-        lessc static/less/site.less > static/css/site.css
+        sassc app/static/scss/site.scss > app/static/css/site.css
 
 2. Use gulp to minify the js and css:
 

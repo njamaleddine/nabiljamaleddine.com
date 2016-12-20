@@ -6,7 +6,7 @@
     background: url("/static/images/nyc.jpg");
     background-position: center;
     background-size: cover;
-    color: @mid-white;
+    color: $mid-white;
     font-size: 22px;
     font-weight: 300;
     min-height: 770px;
@@ -16,11 +16,11 @@
         padding-bottom: 50px;
 
         .title {
-            .title-text-clear;
+            @extend .title-text-clear;
         }
 
         .description {
-            .shadowed-text;
+            @extend .shadowed-text;
             letter-spacing: 1px;
             line-height: 30px;
             font-weight: 200;

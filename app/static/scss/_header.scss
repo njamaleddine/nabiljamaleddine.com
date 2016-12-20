@@ -12,7 +12,7 @@ nav {
         padding-bottom: 50px !important;
     }
     .logo {
-        color: @dark-gray;
+        color: $dark-gray;
         display: block;
         font-size: 34px;
         font-weight: 300;
@@ -21,7 +21,7 @@ nav {
     }
 
     .subheading {
-        color: @dark-gray;
+        color: $dark-gray;
         font-size: 25px;
         font-weight: 300;
     }

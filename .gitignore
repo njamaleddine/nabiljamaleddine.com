@@ -7,3 +7,4 @@
 *.db
 nabiljamaleddine.conf
 node_modules
+app/static/vendor

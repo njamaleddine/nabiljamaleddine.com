@@ -9,11 +9,11 @@ p {
     }
 }
 pre, code {
-    background-color: @code-background;
+    background-color: $code-background;
     font-size: 14px;
     padding: 20px;
     overflow-x: auto;  // this might be a horrible idea
-    // font-family: @source-code-pro;
+    // font-family: $source-code-pro;
 
     code {
         // Remove padding for nested objects
