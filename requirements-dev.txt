@@ -1,0 +1,28 @@
+-r requirements.txt
+
+# Livereload
+# -------------------------------------
+devrecargar==0.1.4
+
+# Debugging
+# -------------------------------------
+django-debug-toolbar==1.6
+ipython==5.1.0
+django-extensions==1.7.5  # for shell_plus and other utils
+Werkzeug==0.11.11
+
+# Testing and coverage
+# -------------------------------------
+pytest-django==3.1.2
+pytest-pythonpath==0.7.1
+pytest-cov==2.4.0
+factory_boy==2.8.1
+flake8==3.2.1
+
+# Versioning
+# -------------------------------------
+bumpversion==0.5.3
+
+# Procfile Manager (https://devcenter.heroku.com/articles/procfile)
+# -------------------------------------
+honcho==0.7.1
