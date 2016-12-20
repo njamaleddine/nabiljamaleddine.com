@@ -21,9 +21,12 @@ class Post(TimeStampedUUIDModel):
     author = models.ForeignKey(User)
     slug = models.SlugField(max_length=100, unique=True)
     published = models.DateTimeField()
-    summary = models.TextField(max_length=255)
+    summary = models.TextField(max_length=500)
     markdown_file = models.FileField(upload_to=upload_to)
     tags = models.ManyToManyField(Tag)
+
+    class Meta:
+        ordering = ('-published', '-created')
 
     def __str__(self):
         return self.title

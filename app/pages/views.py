@@ -1,7 +1,4 @@
 # -*- coding: utf-8 -*-
-import os
-
-from django.conf import settings
 from django.http import Http404
 from django.shortcuts import render
 from markdown import Markdown

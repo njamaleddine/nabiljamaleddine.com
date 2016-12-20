@@ -1,5 +1,5 @@
 <!-- # Missing files/Empty DCIM folder on Android -->
-<!-- Published: 2016-12-18 -->
+<!-- Published: 2016-12-11 -->
 
 I was recently backing up my android phone to transfer files over to a new phone when I noticed that the **DCIM** folder was only showing the latest 100 or so photos when connected to my laptop, when I knew I must have had at least 1000 on the device. Oddly enough they also weren't showing up while using a file manager either.
 
