@@ -8,4 +8,5 @@
 nabiljamaleddine.conf
 node_modules
 app/static/vendor
+app/static/css/*
 .media

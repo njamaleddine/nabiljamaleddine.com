@@ -48,7 +48,7 @@ class Parrot(UUIDModel):
 
     def save(self, *args, **kwargs):
         try:
-            parrot = Parrot.objects.get(id=parrot.pk)
+            parrot = Parrot.objects.get(id=self.pk)
         except Parrot.DoesNotExist:
             parrot = None
         if parrot is None:
