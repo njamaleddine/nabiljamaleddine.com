@@ -5,6 +5,7 @@ from uuid_upload_path import upload_to
 
 from app.base.models import TimeStampedUUIDModel
 from app.users.models import User
+from .managers import PostManager
 
 
 class Tag(TimeStampedUUIDModel):
@@ -24,6 +25,8 @@ class Post(TimeStampedUUIDModel):
     summary = models.TextField(max_length=500)
     markdown_file = models.FileField(upload_to=upload_to)
     tags = models.ManyToManyField(Tag)
+
+    objects = PostManager()
 
     class Meta:
         ordering = ('-published', '-created')
