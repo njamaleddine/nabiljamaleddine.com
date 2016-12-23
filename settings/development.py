@@ -27,11 +27,6 @@ INTERNAL_IPS = ('127.0.0.1', )
 # Note: This key only used for development and testing.
 SECRET_KEY = env("DJANGO_SECRET_KEY", default='fake')
 
-# MONEYSTREAM VARIABLES
-# -----------------------------------------------------------------------------
-# CMS (django admin) is always enabled in development for easy debugging
-MONEYSTREAM_CMS_ENABLED = True
-
 # Mail settings
 # ------------------------------------------------------------------------------
 EMAIL_HOST = 'localhost'

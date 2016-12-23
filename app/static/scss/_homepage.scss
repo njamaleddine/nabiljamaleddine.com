@@ -12,8 +12,8 @@
     min-height: 770px;
 
     .information {
-        margin-top: 100px;
-        padding-bottom: 50px;
+        margin-top: 50px;
+        padding-bottom: 10px;
 
         .title {
             @extend .title-text-clear;
@@ -25,7 +25,6 @@
             line-height: 30px;
             font-weight: 200;
         }
-
     }
 
     .bio {
@@ -46,7 +45,7 @@
         .information {
             margin-top: 50px;
 
-            div, p:not(.title), a {
+            li, div, p:not(.title), a {
                 font-size: 16px;
             }
         }
@@ -98,13 +97,4 @@
 
     }
 
-}
-
-#skillset {
-    font-size: 20px;
-    font-weight: 300;
-
-    @media (max-width: 500px) {
-        font-size: 16px;
-    }
 }

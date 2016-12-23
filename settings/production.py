@@ -65,21 +65,21 @@ MIDDLEWARE_CLASSES += (
 # Email settings
 # ------------------------------------------------------------------------------
 DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL', default='me@nabiljamaleddine.com')
-EMAIL_HOST = env('EMAIL_HOST')
-EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
-EMAIL_HOST_USER = env('EMAIL_HOST_USER')
-EMAIL_PORT = env.int('EMAIL_PORT', default=587)
+# EMAIL_HOST = env('EMAIL_HOST')
+# EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+# EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+# EMAIL_PORT = env.int('EMAIL_PORT', default=587)
 EMAIL_USE_TLS = True
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
 
 # Django REST Framework
 # This will expose all browsable api urls. For dev the default value is true
 # ------------------------------------------------------------------------------
-if not API_DEBUG:
-    if 'rest_framework.renderers.BrowsableAPIRenderer' in REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES']:
-        REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'].remove(
-            'rest_framework.renderers.BrowsableAPIRenderer'
-        )
+# if not API_DEBUG:
+#     if 'rest_framework.renderers.BrowsableAPIRenderer' in REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES']:
+#         REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'].remove(
+#             'rest_framework.renderers.BrowsableAPIRenderer'
+#         )
 
 # Sentry
 # ------------------------------------------------------------------------------

@@ -44,7 +44,7 @@ body {
         }
 
         @media (min-width: 800px) {
-            padding: 20px 100px;
+            padding: 20px 200px;
         }
 
     }
@@ -77,4 +77,11 @@ a {
 hr {
     border: 0;
     border-bottom: 1px solid #eee;
+}
+
+/* Default styles for code */
+pre {
+    letter-spacing: 0px !important;
+    line-height: 1em !important;
+    font-size: 1em !important;
 }

@@ -27,11 +27,18 @@ pre, code {
 
 // Highlight colors for code
 .codehilite {
-    .k, .kd {
+    .bp {
+        color: #900;
+    }
+    .k, .kd, .kn {
         color: #aa33bb;
     }
 
-    .nf, .nx {
+    .s1, .s2 {
+        color: #0086b3;
+    }
+
+    .nf, .nx, .nc, .nd {
         color: #1144aa;
     }
 
@@ -39,8 +46,13 @@ pre, code {
 
     }
 
-    .n, .mi {
-        color: #cc8616;
+    .mi {
+        color: #0086b3;
+    }
+
+    .n {
+        // color: #b22222;
+        color: #da7231;
     }
 
     .c, .c1 {

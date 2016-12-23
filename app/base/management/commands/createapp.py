@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-""" Run Tests and Linting for project """
+""" Create new django app inside of `app` directory """
 from subprocess import call
 
 from django.core.management.base import BaseCommand

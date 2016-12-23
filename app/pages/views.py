@@ -15,7 +15,7 @@ def index(request):
 
 
 def blog(request):
-    """ Display all blog posts from a static json file """
+    """ Display all blog posts """
     context = {
         'page': 'blog'
     }
