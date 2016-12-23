@@ -1,9 +1,12 @@
-# Nabil Jamaleddine's Website
+# NabilJamaleddine.com
 
-#### NabilJamaleddine.com is a Django 1.10 Application built using Python 3.5.2
+Version: 1.0.0
 
-##### Project Setup is only supported on Linux/OS X
+NabilJamaleddine.com is a Django 1.10.4 Application built using Python 3.5.2
 
+## Setup
+
+Project Setup is only supported on OS X
 
 ### Project Dependencies
 1. Install homebrew package manager. On Linux use the included package manager `apt`, etc.
