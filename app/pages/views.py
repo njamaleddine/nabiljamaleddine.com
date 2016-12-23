@@ -46,7 +46,7 @@ def blog_post(request, slug):
     post = Post.objects.filter(slug=slug).first()
     if post:
         context['post'] = post
-        with open(post.markdown_file.path) as post_content:
+        with open(post.markdown_file.path, encoding='utf-8') as post_content:
             # convert blog post markdown into html
             context['content'] = Markdown(
                 extensions=[

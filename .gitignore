@@ -11,3 +11,4 @@ app/static/vendor
 app/static/css/*
 app/static/blog
 .media
+.staticfiles
