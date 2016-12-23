@@ -1,9 +1,12 @@
-# Nabil Jamaleddine's Website
+# NabilJamaleddine.com
 
-#### NabilJamaleddine.com is a Flask 0.10.0 Application built using Python 2
+Version: 1.0.0
 
-##### Project Setup is only supported on Linux/OS X
+NabilJamaleddine.com is a Django 1.10.4 Application built using Python 3.5.2
 
+## Setup
+
+Project Setup is only supported on OS X
 
 ### Project Dependencies
 1. Install homebrew package manager. On Linux use the included package manager `apt`, etc.
@@ -17,11 +20,7 @@ On OS X, Homebrew makes it very simple for us to install many of the project dep
 
         brew install python
 
-4. Install [Foreman](http://ddollar.github.io/foreman/) (**Must have [Ruby](https://www.ruby-lang.org/en/) installed on machine**)
-
-        gem install foreman
-
-5. Install [Virtualenvwrapper](https://virtualenvwrapper.readthedocs.org/en/latest/index.html)
+4. Install [Virtualenvwrapper](https://virtualenvwrapper.readthedocs.org/en/latest/index.html)
 
         sudo pip install virtualenvwrapper
 
@@ -50,20 +49,19 @@ On OS X, Homebrew makes it very simple for us to install many of the project dep
 
 5. Copy `sample.env` to `.env`
 
-6. Set Up Mailgun account. You'll need to fill in `MAIL_USERNAME`, `MAIL_PASSWORD`
 
 ### Running Application
-##### Run as local flask server application:
-    python run.py
+##### Run with local django server application:
+    python manage.py runserver_plus
 
 ##### Run as production application using `gunicorn`:
-    foreman start
+    honcho start
 
 
 ### Static File Management
-1. Compile `less` into `css`:
+1. Compile `scss` into `css`:
 
-        lessc static/less/site.less > static/css/site.css
+        sassc app/static/scss/site.scss > app/static/css/site.css
 
 2. Use gulp to minify the js and css:
 

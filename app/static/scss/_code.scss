@@ -1,0 +1,65 @@
+/*
+    Code highlighting
+*/
+
+// Set up back ticks and pre/code to use proper styling
+p {
+    code {
+        padding: 3px;
+    }
+}
+pre, code {
+    background-color: $code-background;
+    font-size: 14px;
+    padding: 20px;
+    overflow-x: auto;  // this might be a horrible idea
+    // font-family: $source-code-pro;
+
+    code {
+        // Remove padding for nested objects
+        padding: 0;
+    }
+
+    @media(min-width: 700px) {
+        font-size: 18px;
+    }
+}
+
+// Highlight colors for code
+.codehilite {
+    .bp {
+        color: #900;
+    }
+    .k, .kd, .kn {
+        color: #aa33bb;
+    }
+
+    .s1, .s2 {
+        color: #0086b3;
+    }
+
+    .nf, .nx, .nc, .nd {
+        color: #1144aa;
+    }
+
+    .p {
+
+    }
+
+    .mi {
+        color: #0086b3;
+    }
+
+    .n {
+        // color: #b22222;
+        color: #da7231;
+    }
+
+    .c, .c1 {
+        color: #888;
+    }
+
+    .o {
+        color: #b22222;
+    }
+}

@@ -7,3 +7,7 @@
 *.db
 nabiljamaleddine.conf
 node_modules
+app/static/vendor
+app/static/css/*
+app/static/blog
+.media

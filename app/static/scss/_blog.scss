@@ -1,0 +1,98 @@
+/*
+    Blog and single blog post stylesheet
+*/
+
+#blog {
+    // background: #f5f8fa;
+    color: $body-gray;
+    font-size: 22px;
+    min-height: 770px;
+
+    .post {
+        margin-top: 0;
+        padding: 20px 0px;
+
+        .title {
+            font-size: 1.5em;
+        }
+    }
+}
+.post {
+    color: #8D9AB3;
+    font-weight: 300;
+    font-size: 16px;
+    padding: 20px;
+    margin-top: -60px;  // We should be avoiding negative margins, oh well
+
+    & > div {
+        margin-bottom: 1.5em;
+    }
+
+    @media (min-width: 500px) {
+        font-size: 18px;
+    }
+
+    @media (min-width: 700px) {
+        padding: 20px 50px;
+    }
+
+    @media (min-width: 800px) {
+        padding: 20px 100px;
+    }
+
+    .title {
+        font-size: 2em;
+        font-weight: 300;
+
+        a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 400;
+
+            &:hover {
+                color: lighten($dark-gray, 20%);
+            }
+        }
+    }
+
+    h2 {
+        margin-top: 40px;
+    }
+
+    .summary, .content {
+        color: #616161;
+        letter-spacing: 1px;
+        line-height: 1.75em;
+        font-size: 0.95em;
+    }
+
+    .publish-details {
+        font-size: 18px;
+        color: #9E9E9E;
+
+        .author {
+
+        }
+
+        .date-created {
+
+        }
+
+        .tags {
+            display: block;
+            padding: 15px 0px;
+
+            .tag {
+                padding: 5px;
+                font-size: 15px;
+                outline: none;
+                background-color: #e0e0e0;
+                border-radius: 16px;
+
+                a {
+                    text-decoration: none !important;
+                }
+            }
+        }
+    }
+}
