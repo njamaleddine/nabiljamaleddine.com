@@ -21,7 +21,12 @@ DATABASES['default'].update(env.db('DATABASE_URL'))
 # ------------------------------------------------------------------------------
 DEBUG = False
 TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
-
+TEMPLATES[0]['OPTIONS']['loaders'] = [
+    ('django.template.loaders.cached.Loader', [
+        'django.template.loaders.filesystem.Loader',
+        'django.template.loaders.app_directories.Loader',
+    ]),
+]
 # SECRET CONFIGURATION
 # ------------------------------------------------------------------------------
 SECRET_KEY = env('DJANGO_SECRET_KEY')
@@ -56,11 +61,6 @@ SITE_ID = env('DJANGO_SITE_ID', default='production')
 
 INSTALLED_APPS += ('gunicorn', )
 
-# MIDDLEWARE CONFIGURATION
-# ------------------------------------------------------------------------------
-MIDDLEWARE_CLASSES += (
-    'app.base.middleware.GroupDisallowedHostExceptionMiddleware',
-)
 
 # Email settings
 # ------------------------------------------------------------------------------

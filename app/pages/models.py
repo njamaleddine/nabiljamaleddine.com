@@ -19,7 +19,7 @@ class Tag(TimeStampedUUIDModel):
 class Post(TimeStampedUUIDModel):
     """ A Blog post """
     title = models.CharField(max_length=100)
-    author = models.ForeignKey(User)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=100, unique=True)
     published = models.DateTimeField()
     summary = models.TextField(max_length=500)

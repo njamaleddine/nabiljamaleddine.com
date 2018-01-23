@@ -33,7 +33,6 @@ MANAGERS = ADMINS
 # List of strings representing installed apps.
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = (
-    'flat_responsive',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -82,7 +81,7 @@ SITE_ENVIRONMENT = env('SITE_ENVIRONMENT', default='development')
 # List of middleware classes to use.  Order is important; in the request phase,
 # this middleware classes will be applied in the order given, and in the
 # response phase the middleware will be applied in reverse order.
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = (
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -91,6 +90,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
+
 
 # DJANGO CORE
 # ------------------------------------------------------------------------------
