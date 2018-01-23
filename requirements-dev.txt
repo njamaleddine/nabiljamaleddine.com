@@ -6,18 +6,18 @@ devrecargar==0.1.4
 
 # Debugging
 # -------------------------------------
-django-debug-toolbar==1.6
-ipython==5.1.0
-django-extensions==1.7.5  # for shell_plus and other utils
-Werkzeug==0.11.11
+django-debug-toolbar==1.9.1
+ipython==6.2.1
+django-extensions==1.9.9  # for shell_plus and other utils
+Werkzeug==0.14.1
 
 # Testing and coverage
 # -------------------------------------
 pytest-django==3.1.2
 pytest-pythonpath==0.7.1
-pytest-cov==2.4.0
-factory_boy==2.8.1
-flake8==3.2.1
+pytest-cov==2.5.1
+factory_boy==2.9.2 
+flake8==3.5.0
 
 # Versioning
 # -------------------------------------
@@ -25,4 +25,4 @@ bumpversion==0.5.3
 
 # Procfile Manager (https://devcenter.heroku.com/articles/procfile)
 # -------------------------------------
-honcho==0.7.1
+honcho==1.0.1

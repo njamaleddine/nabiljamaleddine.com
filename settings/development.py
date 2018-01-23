@@ -16,6 +16,7 @@ from .common import *  # noqa
 DEBUG = env.bool('DJANGO_DEBUG', default=True)
 TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['0.0.0.0:8000'])
 INTERNAL_IPS = ('127.0.0.1', )
 
 # SECRET CONFIGURATION
@@ -59,7 +60,7 @@ DEVRECARGAR_PATHS_TO_WATCH = [{
 
 # django-debug-toolbar
 # ------------------------------------------------------------------------------
-MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
+MIDDLEWARE += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
 INSTALLED_APPS += ('debug_toolbar', )
 
 DEBUG_TOOLBAR_CONFIG = {

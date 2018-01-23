@@ -4,10 +4,7 @@
   "description": "Nabil Jamaleddine's website",
   "author": "Nabil Jamaleddine",
   "dependencies": {
-    "font-awesome": "^4.7.0",
-    "jquery": "^2.1.4",
-    "jquery-validation": "^1.14.0",
-    "moment": "^2.10.6"
+    "font-awesome": "^4.7.0"
   },
   "private": true,
   "repository": {
