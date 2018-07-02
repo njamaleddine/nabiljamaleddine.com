@@ -2,7 +2,7 @@
 
 Version: 1.0.0
 
-NabilJamaleddine.com is a Django 1.10.4 Application built using Python 3.5.2
+NabilJamaleddine.com is a Django 2.0.6 Application built using Python 3.6.4
 
 ## Setup
 
