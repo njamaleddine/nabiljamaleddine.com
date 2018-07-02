@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 from django.http import Http404
 from django.shortcuts import render
+from django.views.decorators.cache import cache_page
 from markdown import Markdown
 
 from .models import Post, Tag
 
 
+@cache_page(60 * 60)
 def index(request):
     """ Homepage """
     context = {
@@ -14,6 +16,7 @@ def index(request):
     return render(request, 'index.html', context)
 
 
+@cache_page(60 * 15)
 def blog(request):
     """ Display all blog posts """
     context = {
@@ -34,6 +37,7 @@ def blog(request):
     return render(request, 'blog.html', context)
 
 
+@cache_page(60 * 15)
 def blog_post(request, slug):
     """
     Return a single blog post and read the content from a markdown file
