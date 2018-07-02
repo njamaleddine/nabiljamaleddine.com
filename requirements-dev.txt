@@ -15,7 +15,7 @@ Werkzeug==0.14.1
 # -------------------------------------
 pytest-django==3.3.2
 pytest-pythonpath==0.7.1
-pytest-cov==2.5.2
+pytest-cov==2.5.1
 factory_boy==2.11.1
 flake8==3.5.0
 
