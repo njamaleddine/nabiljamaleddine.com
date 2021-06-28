@@ -7,8 +7,8 @@
     <meta property="og:type" content="article" />
     <meta property="og:title" content="{{ post.title }} | Nabil Jamaleddine" />
     <meta property="og:description" content="{{ post.summary }}" />
-    <meta property="article:published_time" content="{{ post.published }}" />
-    <meta property="article:modified_time" content="{{ post.modified }}" />
+    <meta property="article:published_time" content="{{ post.published|date:'c' }}" />
+    <meta property="article:modified_time" content="{{ post.modified|date:'c' }}" />
     <meta property="article:author" content="Nabil Jamaleddine" />
     <meta name="article:tag" content="{% for tag in post.tags.all %}{{ tag.name }}{% if loop.index != post.tags|length %},{% endif %}{% endfor %}">
 {% endblock %}
