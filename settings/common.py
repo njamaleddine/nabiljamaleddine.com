@@ -41,7 +41,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 'django.contrib.humanize',  # Useful template tags
-    'rest_framework',  # http://www.django-rest-framework.org/
     'versatileimagefield',  # https://github.com/WGBH/django-versatileimagefield
     'django_filters',  # https://github.com/alex/django-filter
     'storages',

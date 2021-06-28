@@ -1,16 +1,29 @@
 {% extends 'layouts/base.html' %}
+
+{% block head_tags %}
+    <meta name="keywords" content="Nabil Jamaleddine,Software Engineer,Engineer,Developer,Backend,Python,Django,JavaScript,PostgreSQL,Microservices,REST,GraphQL,AWS">
+    <meta name="description" content="Nabil Jamaleddine, a Software Engineer interested in clean code, schema design, and API development.">
+    <meta property="og:url" content="http://www.nabiljamaleddine.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Nabil Jamaleddine | Software Engineer" />
+    <meta property="og:description" content="Nabil Jamaleddine, a Software Engineer interested in clean code, schema design, and API development." />
+{% endblock %}
+
 {% block body %}
 <div id="main">
     <div id="bio" class="information">
-        <p class="title">Who am I?</p>
+        <p class="title">About</p>
         <p class="description">
-            I'm a fullstack developer currently working at CNN. Throughout my career I've built applications that spanned a variety of domains, including news, social networks, ecommerce, education, and entertainment. Some topics that interest me are GraphQL and REST APIs, database architecture, microservices, and infrastructure as code.
+            I'm a Software Engineer and Tech Lead currently working at CNN.
         </p>
         <p class="description">
-            When I'm not writing code, I enjoy exploring the culinary world, craft beer, and martial arts.
+            Throughout my career I've worked on distributed systems and microservice architectures implementing GraphQL and REST APIs, database design for SQL and NoSQL applications, and infrastructure as code.
+            I've developed across various domains including news, custom content management solutions, ecommerce, data mining, social media, education, and entertainment.
+        </p>
+        <p class="description">
+            When I'm not coding, I enjoy exploring the culinary world, craft beer, and martial arts.
         </p>
     </div>
-
     <div id="experience" class="information">
         <p class="title">Experience</p>
         <ul class="description">
@@ -21,21 +34,16 @@
             </li>
             <li>JavaScript
                 <ul>
-                    <li>Node.js, MongoDB, React, Mocha, Chai</li>
+                    <li>Node.js, MongoDB, React, Jest, Mocha, Chai, Sinon</li>
                 </ul>
             </li>
             <li>AWS
                 <ul>
-                    <li>EC2, Lambda, RDS (PostgreSQL), Elasticache (Redis), EBS, SES, SNS, S3, DynamoDB</li>
+                    <li>EC2, Lambda, RDS (PostgreSQL), Elasticache (Redis), SNS, SQS, S3, DynamoDB, SES, API Gateway, CloudFormation, Elastic Beanstalk</li>
                 </ul>
             </li>
             <li>Heroku</li>
             <li>HTML, CSS</li>
-            <li>Java
-                <ul>
-                    <li>Android SDK</li>
-                </ul>
-            </li>
         </ul>
     </div>
 </div>

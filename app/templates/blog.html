@@ -1,4 +1,14 @@
 {% extends 'layouts/base.html' %}
+
+{% block head_tags %}
+    <meta name="keywords" content="Nabil Jamaleddine,Software Engineer,Engineer,Developer,Backend,Python,Django,JavaScript,PostgreSQL,Microservices,REST,GraphQL,AWS">
+    <meta name="description" content="Nabil Jamaleddine, a Software Engineer interested in clean code, schema design, and API development.">
+    <meta property="og:url" content="http://www.nabiljamaleddine.com/blog" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Nabil Jamaleddine | Software Engineer" />
+    <meta property="og:description" content="Nabil Jamaleddine, a Software Engineer interested in clean code, schema design, and API development." />
+{% endblock %}
+
 {% block body %}
 <div id="blog">
     {% for post in posts %}

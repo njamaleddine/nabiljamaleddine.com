@@ -1,4 +1,18 @@
 {% extends 'layouts/base.html' %}
+
+{% block head_tags %}
+    <meta name="keywords" content="{% for tag in post.tags.all %}{{ tag.name }}{% if loop.index != post.tags|length %},{% endif %}{% endfor %}">
+    <meta name="description" content="{{ post.summary }}">
+    <meta property="og:url" content="http://www.nabiljamaleddine.com/blog/{{ post.slug }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{ post.title }} | Nabil Jamaleddine" />
+    <meta property="og:description" content="{{ post.summary }}" />
+    <meta property="article:published_time" content="{{ post.published }}" />
+    <meta property="article:modified_time" content="{{ post.modified }}" />
+    <meta property="article:author" content="Nabil Jamaleddine" />
+    <meta name="article:tag" content="{% for tag in post.tags.all %}{{ tag.name }}{% if loop.index != post.tags|length %},{% endif %}{% endfor %}">
+{% endblock %}
+
 {% block body %}
 {% include 'layouts/_blog_post_detail.html' %}
 {% endblock %}

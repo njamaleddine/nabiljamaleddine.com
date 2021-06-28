@@ -72,15 +72,6 @@ DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL', default='me@nabiljamaleddine.com'
 EMAIL_USE_TLS = True
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
 
-# Django REST Framework
-# This will expose all browsable api urls. For dev the default value is true
-# ------------------------------------------------------------------------------
-# if not API_DEBUG:
-#     if 'rest_framework.renderers.BrowsableAPIRenderer' in REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES']:
-#         REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'].remove(
-#             'rest_framework.renderers.BrowsableAPIRenderer'
-#         )
-
 # Sentry
 # ------------------------------------------------------------------------------
 INSTALLED_APPS += ('raven.contrib.django.raven_compat',)
