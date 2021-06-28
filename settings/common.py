@@ -37,14 +37,11 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django_sites',  # http://niwinz.github.io/django-sites/latest/
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 'django.contrib.humanize',  # Useful template tags
     'versatileimagefield',  # https://github.com/WGBH/django-versatileimagefield
-    'django_filters',  # https://github.com/alex/django-filter
     'storages',
-    'app.base',
     'app.pages',
     'app.users',
 )
@@ -60,20 +57,7 @@ AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',)
 # For Exposing browsable api urls. By default urls won't be exposed.
 API_DEBUG = env.bool('API_DEBUG', default=False)
 
-# DJANGO_SITES
-# ------------------------------------------------------------------------------
-# see: http://django-sites.readthedocs.org
 SITE_NAME = env('SITE_NAME', default="Nabil Jamaleddine's Site")
-
-SITES = {
-    'local': {
-        'domain': 'localhost:8000',
-        'scheme': 'http',
-        'name': SITE_NAME,
-    },
-}
-SITE_ID = 'local'
-SITE_ENVIRONMENT = env('SITE_ENVIRONMENT', default='development')
 
 # MIDDLEWARE CONFIGURATION
 # ------------------------------------------------------------------------------

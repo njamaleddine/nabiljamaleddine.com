@@ -1,39 +1,32 @@
 # Core
 # -------------------------------------
-Django==2.1.3
-djangorestframework==3.8.2
-gunicorn==19.8.1
+Django==3.2.4
+gunicorn==20.1.0
 
 # Configuration
 # -------------------------------------
 django-environ==0.4.5
-django-sites==0.10
-python-dotenv==0.8.2
+python-dotenv==0.18.0
 
 # Extensions
 # -------------------------------------
-pytz==2018.5
+pytz==2021.1
 
 # Models
 # -------------------------------------
-psycopg2==2.7.5
-django-model-utils==3.1.2
-Pillow==5.0.0
-django-versatileimagefield==1.9
+psycopg2==2.9.1
+django-model-utils==4.1.1
+Pillow==8.2.0
+django-versatileimagefield==2.1
 django-uuid-upload-path==1.0.0
-
-# REST Framework Extensions
-# -------------------------------------
-django-filter==1.1.0
 
 # Static Files and Media Storage
 # -------------------------------------
-boto3==1.7.48
-django-storages==1.6.6
+django-storages==1.11.1
 
 # Logging
 # -------------------------------------
-python-json-logger==0.1.9
+python-json-logger==2.0.1
 apache-log-parser==1.7.0
 
 # Sentry (https://getsentry.com)
@@ -42,6 +35,6 @@ raven==6.9.0
 
 # Blog Tooling
 # -------------------------------------
-Markdown==2.6.11
-MarkupSafe==1.0
-Pygments==2.2.0
+Markdown==3.3.4
+MarkupSafe==2.0.1
+Pygments==2.9.0

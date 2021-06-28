@@ -49,16 +49,6 @@ if SITE_SCHEME == 'https':
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
 
-# DJANGO_SITES
-# ------------------------------------------------------------------------------
-# see: http://niwinz.github.io/django-sites/latest/
-SITES['production'] = {  # noqa: F405
-    'domain': env('SITE_DOMAIN'),
-    'scheme': SITE_SCHEME,
-    'name': SITE_NAME,
-}
-SITE_ID = env('DJANGO_SITE_ID', default='production')
-
 INSTALLED_APPS += ('gunicorn', )
 
 

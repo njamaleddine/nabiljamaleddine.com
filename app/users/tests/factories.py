@@ -13,8 +13,8 @@ TEST_PASSWORD = fake.password(
 
 
 class UserFactory(factory.django.DjangoModelFactory):
-    username = factory.Sequence(lambda n: 'user-{0}'.format(n))
-    email = factory.Sequence(lambda n: 'user-{0}@example.com'.format(n))
+    username = factory.Sequence(lambda n: f'user-{n}')
+    email = factory.Sequence(lambda n: f'user-{n}@example.com')
     password = factory.PostGenerationMethodCall('set_password', TEST_PASSWORD)
     first_name = factory.lazy_attribute(lambda x: fake.first_name())
     last_name = factory.lazy_attribute(lambda x: fake.last_name())
