@@ -2,15 +2,11 @@
 
 Version: 1.0.0
 
-NabilJamaleddine.com is a Django 2.0.6 Application built using Python 3.6.4
+NabilJamaleddine.com is a Django Application built using Python 3
 
 ## Setup
-
-Project Setup is only supported on OS X
-
-### Project Dependencies
-1. Install homebrew package manager. On Linux use the included package manager `apt`, etc.
-On OS X, Homebrew makes it very simple for us to install many of the project dependencies.
+### Dependencies
+1. Install homebrew package manager for macOS. On Linux use the included package manager `apt`, etc.
 
 2. Install [git](https://git-scm.com/)
 
@@ -20,34 +16,24 @@ On OS X, Homebrew makes it very simple for us to install many of the project dep
 
         brew install python
 
-4. Install [Virtualenvwrapper](https://virtualenvwrapper.readthedocs.org/en/latest/index.html)
-
-        sudo pip install virtualenvwrapper
-
-    * Note: **Don't install any other dependencies using `sudo` after this. [Read more about virtual environments here](http://docs.python-guide.org/en/latest/dev/virtualenvs/)**
-
-6. Install [node](https://nodejs.org/en/)
+4. Install [node](https://nodejs.org/en/)
         brew install node
 
 
 ### Project Setup
-1. Clone repository:
+1. Create a virtualenv:
 
-        git clone git@bitbucket.org:njamaleddine/nabiljamaleddine.git
+        python3 -m venv ~/.virtualenvs/nabiljamaleddine
 
-2. Create a virtualenv:
+2. Activate virtualenv:
 
-        mkvirtualenv nabiljamaleddine
+        source ~/.virtualenvs/nabiljamaleddine/bin/activate
 
-3. Activate virtualenv:
+3. Install requirements:
 
-        workon nabiljamaleddine
+        pip install -r requirements-dev.txt
 
-4. Install requirements:
-
-        pip install -r requirements.txt
-
-5. Copy `sample.env` to `.env`
+4. Copy `sample.env` to `.env`
 
 
 ### Running Application
