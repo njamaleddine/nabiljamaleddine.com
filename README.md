@@ -52,3 +52,7 @@ NabilJamaleddine.com is a Django Application built using Python 3
 2. Use gulp to minify the js and css:
 
         gulp minify
+
+3. Collect static files
+
+        python manage.py collectstatic
