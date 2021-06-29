@@ -159,7 +159,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'app.pages.context_processors.profile_info',
                 'app.pages.context_processors.default_meta_tags',
-                'app.pages.context_processors.site_url',
+                'app.pages.context_processors.canonical_url',
             ],
         },
     },

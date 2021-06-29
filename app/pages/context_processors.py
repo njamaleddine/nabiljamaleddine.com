@@ -11,7 +11,13 @@ def default_meta_tags(request):
     }
 
 
-def site_url(request):
+def canonical_url(request):
+    if request.path == '/':
+        url = f'{settings.SITE_URL}'
+    else:
+
+        url = f'{settings.SITE_URL}{request.path}'
+
     return {
-        "site_url": settings.SITE_URL,
+        "get_canonical_url": url,
     }
