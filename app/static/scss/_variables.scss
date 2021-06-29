@@ -4,7 +4,6 @@
 
 /* Fonts */
 $roboto: "Roboto", Arial, sans-serif;
-// $source-code-pro: "Source Code Pro", monospace;
 // Override path for font-awesome
 $fa-font-path: "../vendor/fonts/font-awesome/";
 
@@ -13,7 +12,7 @@ $white: #fff;
 $print-white: #fcfcfc;
 $mid-white: #ddd;
 $link-green: #aca;
-$dark-link-green: #565;
+$dark-link: rgb(50, 50, 50);
 $error-red: #faa;
 $body-gray: #222;
 $dark-gray: #333;

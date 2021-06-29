@@ -54,10 +54,8 @@ INSTALLED_APPS = (
 AUTH_USER_MODEL = 'users.User'
 AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',)
 
-# For Exposing browsable api urls. By default urls won't be exposed.
-API_DEBUG = env.bool('API_DEBUG', default=False)
-
 SITE_NAME = env('SITE_NAME', default="Nabil Jamaleddine's Site")
+SITE_URL = env('SITE_URL', default="http://www.nabiljamaleddine.com")
 
 # MIDDLEWARE CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -159,6 +157,9 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.request',
+                'app.pages.context_processors.profile_info',
+                'app.pages.context_processors.default_meta_tags',
+                'app.pages.context_processors.site_url',
             ],
         },
     },
@@ -309,4 +310,24 @@ LOGGING = {
             'propagate': True,
         },
     }
+}
+
+PROFILE_INFO = {
+    'name': 'Nabil Jamaleddine',
+    'role': 'Software Engineer',
+    'github': 'https://github.com/njamaleddine',
+    'linkedin': 'https://www.linkedin.com/in/nabil-jamaleddine-07094240',
+    'email': 'mailto:me@nabiljamaleddine.com',
+}
+
+META_TAGS = {
+    'title': f'{PROFILE_INFO["name"]} | {PROFILE_INFO["role"]}',
+    'keywords': (
+        'Nabil Jamaleddine,Software Engineer,Engineer,Developer,Backend,'
+        'Python,Django,JavaScript,PostgreSQL,Microservices,REST,GraphQL,AWS'
+    ),
+    'description': (
+        'Nabil Jamaleddine, a Software Engineer interested in clean code, schema design, '
+        'and API development.'
+    ),
 }

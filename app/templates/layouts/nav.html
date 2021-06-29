@@ -1,12 +1,12 @@
 <nav>
     <a href="/" class="logo">
-        Nabil Jamaleddine
+        {{ profile_info.name }}
     </a>
-    <h1 class="subheading">Web Developer</h1>
+    <h1 class="subheading">{{ profile_info.role }}</h1>
     <ul class="navigation">
         <li><a href="/blog">Blog</a></li>
-        <li><a href="https://github.com/njamaleddine" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-        <li><a href="https://www.linkedin.com/in/nabil-jamaleddine-07094240" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-        <li><a href="mailto:me@nabiljamaleddine.com"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+        <li><a href="{{ profile_info.github }}" target="_blank">GitHub <i class="fa fa-github" aria-hidden="true"></i></a></li>
+        <li><a href="{{ profile_info.linkedin }}" target="_blank">LinkedIn <i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+        <li><a href="{{ profile_info.email }}">Email <i class="fa fa-envelope" aria-hidden="true"></i></a></li>
     </ul>
 </nav>
