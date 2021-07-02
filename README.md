@@ -16,17 +16,11 @@ NabilJamaleddine.com is a Django Application built with Python 3
 
 ### Running Application
 ##### Run with local django server application:
-    python manage.py runserver_plus
+```
+python manage.py runserver_plus
+```
 
 ### Static File Management
-1. Compile `scss` into `css`:
-
-        sassc app/static/scss/site.scss > app/static/css/site.css
-
-2. Use gulp to minify the js and css:
-
-        gulp minify
-
-3. Collect static files
-
-        python manage.py collectstatic
+```
+./scripts/build_staticfiles.sh
+```
