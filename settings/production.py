@@ -61,13 +61,3 @@ DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL', default='me@nabiljamaleddine.com'
 # EMAIL_PORT = env.int('EMAIL_PORT', default=587)
 EMAIL_USE_TLS = True
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
-
-# Sentry
-# ------------------------------------------------------------------------------
-INSTALLED_APPS += ('raven.contrib.django.raven_compat',)
-RAVEN_CONFIG = {
-    'CELERY_LOGLEVEL': logging.ERROR,
-    'dsn': env('SENTRY_DSN'),
-    'environment': SITE_ENVIRONMENT,
-    'release': __version__,
-}

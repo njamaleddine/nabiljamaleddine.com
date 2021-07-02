@@ -262,10 +262,6 @@ LOGGING = {
             'class': 'logging.StreamHandler',
             'formatter': 'json',
         },
-        'sentry': {
-            'level': 'WARNING',
-            'class': 'raven.contrib.django.raven_compat.handlers.SentryHandler',
-        },
         'mail_admins': {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
@@ -279,18 +275,18 @@ LOGGING = {
             'level': 'INFO',
         },
         'django.request': {
-            'handlers': ['mail_admins', 'console', 'sentry'],
+            'handlers': ['mail_admins', 'console'],
             'level': 'ERROR',
             'propagate': False,
         },
         'gunicorn': {
             'level': 'INFO',
-            'handlers': ['console', 'sentry'],
+            'handlers': ['console'],
             'propagate': False,
         },
         'app': {
             'level': 'INFO',
-            'handlers': ['console', 'sentry'],
+            'handlers': ['console'],
             'propagate': False,
         },
         'raven': {
@@ -298,14 +294,9 @@ LOGGING = {
             'handlers': ['console'],
             'propagate': False,
         },
-        'sentry.errors': {
-            'level': 'WARNING',
-            'handlers': ['console'],
-            'propagate': False,
-        },
         # Catch All Logger -- Captures any other logging
         '': {
-            'handlers': ['console', 'sentry', 'mail_admins'],
+            'handlers': ['console', 'mail_admins'],
             'level': 'ERROR',
             'propagate': True,
         },
