@@ -37,15 +37,11 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django_sites',  # http://niwinz.github.io/django-sites/latest/
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 'django.contrib.humanize',  # Useful template tags
-    'rest_framework',  # http://www.django-rest-framework.org/
     'versatileimagefield',  # https://github.com/WGBH/django-versatileimagefield
-    'django_filters',  # https://github.com/alex/django-filter
     'storages',
-    'app.base',
     'app.pages',
     'app.users',
 )
@@ -58,23 +54,8 @@ INSTALLED_APPS = (
 AUTH_USER_MODEL = 'users.User'
 AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',)
 
-# For Exposing browsable api urls. By default urls won't be exposed.
-API_DEBUG = env.bool('API_DEBUG', default=False)
-
-# DJANGO_SITES
-# ------------------------------------------------------------------------------
-# see: http://django-sites.readthedocs.org
 SITE_NAME = env('SITE_NAME', default="Nabil Jamaleddine's Site")
-
-SITES = {
-    'local': {
-        'domain': 'localhost:8000',
-        'scheme': 'http',
-        'name': SITE_NAME,
-    },
-}
-SITE_ID = 'local'
-SITE_ENVIRONMENT = env('SITE_ENVIRONMENT', default='development')
+SITE_URL = env('SITE_URL', default="http://www.nabiljamaleddine.com")
 
 # MIDDLEWARE CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -176,6 +157,9 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.request',
+                'app.pages.context_processors.profile_info',
+                'app.pages.context_processors.default_meta_tags',
+                'app.pages.context_processors.canonical_url',
             ],
         },
     },
@@ -326,4 +310,24 @@ LOGGING = {
             'propagate': True,
         },
     }
+}
+
+PROFILE_INFO = {
+    'name': 'Nabil Jamaleddine',
+    'role': 'Software Engineer',
+    'github': 'https://github.com/njamaleddine',
+    'linkedin': 'https://www.linkedin.com/in/nabil-jamaleddine-07094240',
+    'email': 'mailto:me@nabiljamaleddine.com',
+}
+
+META_TAGS = {
+    'title': f'{PROFILE_INFO["name"]} | {PROFILE_INFO["role"]}',
+    'keywords': (
+        'Nabil Jamaleddine,Software Engineer,Engineer,Developer,Backend,'
+        'Python,Django,JavaScript,PostgreSQL,Microservices,REST,GraphQL,AWS'
+    ),
+    'description': (
+        'Nabil Jamaleddine, a Software Engineer interested in clean code, schema design, '
+        'and API development.'
+    ),
 }

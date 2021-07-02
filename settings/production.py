@@ -49,16 +49,6 @@ if SITE_SCHEME == 'https':
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
 
-# DJANGO_SITES
-# ------------------------------------------------------------------------------
-# see: http://niwinz.github.io/django-sites/latest/
-SITES['production'] = {  # noqa: F405
-    'domain': env('SITE_DOMAIN'),
-    'scheme': SITE_SCHEME,
-    'name': SITE_NAME,
-}
-SITE_ID = env('DJANGO_SITE_ID', default='production')
-
 INSTALLED_APPS += ('gunicorn', )
 
 
@@ -71,15 +61,6 @@ DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL', default='me@nabiljamaleddine.com'
 # EMAIL_PORT = env.int('EMAIL_PORT', default=587)
 EMAIL_USE_TLS = True
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
-
-# Django REST Framework
-# This will expose all browsable api urls. For dev the default value is true
-# ------------------------------------------------------------------------------
-# if not API_DEBUG:
-#     if 'rest_framework.renderers.BrowsableAPIRenderer' in REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES']:
-#         REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'].remove(
-#             'rest_framework.renderers.BrowsableAPIRenderer'
-#         )
 
 # Sentry
 # ------------------------------------------------------------------------------

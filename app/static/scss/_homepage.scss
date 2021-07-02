@@ -3,10 +3,10 @@
 */
 
 #main {
-    background: url("/static/images/nyc.jpg");
+    background: linear-gradient(to bottom,rgba(50,50,50,.5) 0,rgba(0,0,0,.6) 100%), url("/static/images/background-001.jpg");
     background-position: center;
     background-size: cover;
-    color: $mid-white;
+    color: $print-white;
     font-size: 22px;
     font-weight: 300;
     min-height: 770px;
@@ -25,18 +25,6 @@
             line-height: 30px;
             font-weight: 200;
         }
-    }
-
-    .bio {
-
-    }
-
-    .about {
-
-    }
-
-    .projects {
-
     }
 
     @media (max-width: 500px) {

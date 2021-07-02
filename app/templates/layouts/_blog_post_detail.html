@@ -1,9 +1,9 @@
 <div class="post">
     <h1 class="title"><a href="/blog/{{ post.slug }}">{{ post.title }}</a></h1>
     {% if page == 'blog_post' %}
-        <div class="content"> {{ content|safe }}</div>
+        <div class="content">{{ content|safe }}</div>
     {% else %}
-        <div class="summary"> {{ post.summary }}</div>
+        <div class="summary">{{ post.summary }}</div>
     {% endif %}
     <div class="publish-details">
         <span class="author">{{ post.author }}</span>

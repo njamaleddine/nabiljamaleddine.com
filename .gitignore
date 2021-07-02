@@ -12,3 +12,4 @@ app/static/css/*
 app/static/blog
 .media
 .staticfiles
+._ignore/

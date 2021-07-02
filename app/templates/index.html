@@ -1,41 +1,52 @@
 {% extends 'layouts/base.html' %}
+
+{% block head_tags %}
+    <title>{{ default_meta_tags.title }}</title>
+    <meta name="author" content="{{ profile_info.name }}">
+    <meta name="keywords" content="{{ default_meta_tags.keywords }}">
+    <meta name="description" content="{{ default_meta_tags.description }}">
+    <meta property="og:url" content="{{ get_canonical_url }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ default_meta_tags.title }}" />
+    <meta property="og:description" content="{{ default_meta_tags.description }}" />
+    <link rel="canonical" href="{{ get_canonical_url }}" />
+{% endblock %}
+
 {% block body %}
 <div id="main">
     <div id="bio" class="information">
-        <p class="title">Who am I?</p>
+        <p class="title">About</p>
         <p class="description">
-            I'm a fullstack developer currently working at CNN. Throughout my career I've built applications that spanned a variety of domains, including news, social networks, ecommerce, education, and entertainment. Some topics that interest me are GraphQL and REST APIs, database architecture, microservices, and infrastructure as code.
+            I'm a Software Engineer currently working at CNN.
         </p>
         <p class="description">
-            When I'm not writing code, I enjoy exploring the culinary world, craft beer, and martial arts.
+            I've developed applications and microservices across various domains using GraphQL and REST APIs, SQL and NoSQL databases, message queues, CDN and application caches, and infrastructure as code.
+        </p>
+        <p class="description">
+            When I'm not coding, I enjoy exploring the culinary world, craft beer, and martial arts.
         </p>
     </div>
-
     <div id="experience" class="information">
         <p class="title">Experience</p>
         <ul class="description">
             <li>Python
                 <ul>
-                    <li>Django, REST Framework, Celery, pytest, mock</li>
+                    <li>Django, REST Framework, Celery, Flask, pytest, mock</li>
                 </ul>
             </li>
             <li>JavaScript
                 <ul>
-                    <li>Node.js, MongoDB, React, Mocha, Chai</li>
+                    <li>Node.js, MongoDB, React, Jest</li>
                 </ul>
             </li>
             <li>AWS
                 <ul>
-                    <li>EC2, Lambda, RDS (PostgreSQL), Elasticache (Redis), EBS, SES, SNS, S3, DynamoDB</li>
+                    <li>ECS, Lambda, RDS (PostgreSQL), ElastiCache (Redis), SNS, SQS, S3, DynamoDB, CloudWatch, SES, API Gateway, CloudFormation, EC2, Elastic Beanstalk</li>
                 </ul>
             </li>
-            <li>Heroku</li>
             <li>HTML, CSS</li>
-            <li>Java
-                <ul>
-                    <li>Android SDK</li>
-                </ul>
-            </li>
+            <li>Tech & Team Lead</li>
+            <li>Domain knowledge of Digital News, E-commerce, Social Media, Education, and Entertainment.</li>
         </ul>
     </div>
 </div>
