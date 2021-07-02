@@ -7,13 +7,10 @@ brew install git
 brew install python
 brew install node
 
-# install global python requirements
-sudo pip3 install --upgrade pip
-sudo pip3 install virtualenvwrapper
-
 # Create virtual environment
 python3 -m venv ~/.virtualenvs/$APP_NAME
 source ${APP_NAME}/bin/activate
+pip install --upgrade pip
 
 # create postgresql database
 createdb $APP_NAME

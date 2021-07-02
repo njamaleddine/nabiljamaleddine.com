@@ -7,11 +7,11 @@ APP_NAME="nabiljamaleddine"
 
 # install global python requirements
 sudo pip install --upgrade pip
-sudo pip install virtualenvwrapper
 
 # Activate Virtual Environment Requirements
 python3 -m venv ~/.virtualenvs/$APP_NAME
 source ${APP_NAME}/bin/activate
+pip install --upgrade pip
 
 # install all production requirements
 pip install -r requirements.txt
