@@ -13,3 +13,4 @@ app/static/blog
 .media
 .staticfiles
 ._ignore/
+*.sql
