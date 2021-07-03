@@ -50,6 +50,7 @@ def blog_post(request, slug):
     post = Post.objects.filter(slug=slug).first()
     if post:
         context['post'] = post
+        context['tags'] = [tag.name for tag in post.tags.all()]
         with open(post.markdown_file.path, encoding='utf-8') as post_content:
             # convert blog post markdown into html
             context['content'] = Markdown(

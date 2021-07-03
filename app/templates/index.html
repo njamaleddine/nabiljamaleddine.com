@@ -1,17 +1,5 @@
 {% extends 'layouts/base.html' %}
 
-{% block head_tags %}
-    <title>{{ default_meta_tags.title }}</title>
-    <meta name="author" content="{{ profile_info.name }}">
-    <meta name="keywords" content="{{ default_meta_tags.keywords }}">
-    <meta name="description" content="{{ default_meta_tags.description }}">
-    <meta property="og:url" content="{{ get_canonical_url }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="{{ default_meta_tags.title }}" />
-    <meta property="og:description" content="{{ default_meta_tags.description }}" />
-    <link rel="canonical" href="{{ get_canonical_url }}" />
-{% endblock %}
-
 {% block body %}
 <div id="main">
     <div id="bio" class="information">

@@ -1,19 +1,18 @@
 {% extends 'layouts/base.html' %}
 
+{% block title %}{{ post.title }} | {{ profile_info.name }}{% endblock %}
+
 {% block head_tags %}
-    <title>{{ post.title }} | {{ profile_info.name }}</title>
-    <meta name="author" content="{{ profile_info.name }}">
-    <meta name="keywords" content="{% for tag in post.tags.all %}{{ tag.name }}{% if loop.index != post.tags|length %},{% endif %}{% endfor %}">
-    <meta name="description" content="{{ post.summary }}">
-    <meta property="og:url" content="{{ get_canonical_url }}" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="{{ post.title }} | {{ profile_info.name }}" />
-    <meta property="og:description" content="{{ post.summary }}" />
-    <meta property="article:published_time" content="{{ post.published|date:'c' }}" />
-    <meta property="article:modified_time" content="{{ post.modified|date:'c' }}" />
-    <meta property="article:author" content="{{ profile_info.name }}" />
-    <meta name="article:tag" content="{% for tag in post.tags.all %}{{ tag.name }}{% if loop.index != post.tags|length %},{% endif %}{% endfor %}">
-    <link rel="canonical" href="{{ get_canonical_url }}" />
+<meta name="author" content="{{ profile_info.name }}">
+<meta name="keywords" content="{{post_tags|join:','}}">
+<meta name="description" content="{{ post.summary }}">
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{ post.title }} | {{ profile_info.name }}" />
+<meta property="og:description" content="{{ post.summary }}" />
+<meta property="article:published_time" content="{{ post.published|date:'c' }}" />
+<meta property="article:modified_time" content="{{ post.modified|date:'c' }}" />
+<meta property="article:author" content="{{ profile_info.name }}" />
+<meta name="article:tag" content="{{post_tags|join:','}}">
 {% endblock %}
 
 {% block body %}
