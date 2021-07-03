@@ -8,14 +8,14 @@ from django.conf import settings
 
 
 class Command(BaseCommand):
-    help = 'Create a django app in the proper directory'
+    help = "Create a django app in the proper directory"
 
     def add_arguments(self, parser):
-        parser.add_argument('app_name', nargs='?')
+        parser.add_argument("app_name", nargs="?")
 
     def handle(self, *args, **options):
-        arguments = ['python', '../manage.py', 'startapp']
-        if options.get('app_name'):
-            arguments.append(options['app_name'])
+        arguments = ["python", "../manage.py", "startapp"]
+        if options.get("app_name"):
+            arguments.append(options["app_name"])
 
         call(arguments, cwd=str(settings.APPS_DIR))

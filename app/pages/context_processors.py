@@ -2,7 +2,7 @@ from django.conf import settings
 
 
 def profile_info(request):
-    return { 'profile_info': settings.PROFILE_INFO }
+    return {"profile_info": settings.PROFILE_INFO}
 
 
 def default_meta_tags(request):
@@ -12,11 +12,10 @@ def default_meta_tags(request):
 
 
 def canonical_url(request):
-    if request.path == '/':
-        url = f'{settings.SITE_URL}'
+    if request.path == "/":
+        url = f"{settings.SITE_URL}"
     else:
-
-        url = f'{settings.SITE_URL}{request.path}'
+        url = f"{settings.SITE_URL}{request.path}"
 
     return {
         "get_canonical_url": url,

@@ -9,27 +9,30 @@ from .common import *  # noqa
 # SITE CONFIGURATION
 # Hosts/domain names that are valid for this site.
 # ------------------------------------------------------------------------------
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
 
 # DATABASE CONFIGURATION
 # ------------------------------------------------------------------------------
 # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
 # Should not override all db settings
-DATABASES['default'].update(env.db('DATABASE_URL'))
+DATABASES["default"].update(env.db("DATABASE_URL"))
 
 # DEBUG
 # ------------------------------------------------------------------------------
 DEBUG = False
-TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
-TEMPLATES[0]['OPTIONS']['loaders'] = [
-    ('django.template.loaders.cached.Loader', [
-        'django.template.loaders.filesystem.Loader',
-        'django.template.loaders.app_directories.Loader',
-    ]),
+TEMPLATES[0]["OPTIONS"]["debug"] = DEBUG
+TEMPLATES[0]["OPTIONS"]["loaders"] = [
+    (
+        "django.template.loaders.cached.Loader",
+        [
+            "django.template.loaders.filesystem.Loader",
+            "django.template.loaders.app_directories.Loader",
+        ],
+    ),
 ]
 # SECRET CONFIGURATION
 # ------------------------------------------------------------------------------
-SECRET_KEY = env('DJANGO_SECRET_KEY')
+SECRET_KEY = env("DJANGO_SECRET_KEY")
 
 # If your Django app is behind a proxy that sets a header to specify secure
 # connections, AND that proxy ensures that user-submitted headers with the
@@ -42,19 +45,19 @@ SECRET_KEY = env('DJANGO_SECRET_KEY')
 # TODO: Enable when we get an SSL Certificate
 # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-SITE_SCHEME = env('SITE_SCHEME', default='http')
+SITE_SCHEME = env("SITE_SCHEME", default="http")
 
-if SITE_SCHEME == 'https':
+if SITE_SCHEME == "https":
     SECURE_SSL_REDIRECT = True
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
 
-INSTALLED_APPS += ('gunicorn', )
+INSTALLED_APPS += ("gunicorn",)
 
 
 # Email settings
 # ------------------------------------------------------------------------------
-DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL', default='me@nabiljamaleddine.com')
+DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL", default="me@nabiljamaleddine.com")
 # EMAIL_HOST = env('EMAIL_HOST')
 # EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 # EMAIL_HOST_USER = env('EMAIL_HOST_USER')

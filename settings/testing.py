@@ -4,7 +4,7 @@ from .development import *  # noqa
 
 MEDIA_ROOT = "/tmp"
 
-SECRET_KEY = 'fake'
+SECRET_KEY = "fake"
 
 EMAIL_BACKEND = "django.core.mail.backends.locmem.EmailBackend"
-INSTALLED_APPS += ("tests", )
+INSTALLED_APPS += ("tests",)

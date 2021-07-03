@@ -9,7 +9,8 @@ from .managers import PostManager
 
 
 class Tag(TimeStampedUUIDModel):
-    """ A Tag associated with a Post """
+    """A Tag associated with a Post"""
+
     name = models.CharField(max_length=255)
 
     def __str__(self):
@@ -17,7 +18,8 @@ class Tag(TimeStampedUUIDModel):
 
 
 class Post(TimeStampedUUIDModel):
-    """ A Blog post """
+    """A Blog post"""
+
     title = models.CharField(max_length=100)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=100, unique=True)
@@ -29,10 +31,10 @@ class Post(TimeStampedUUIDModel):
     objects = PostManager()
 
     class Meta:
-        ordering = ('-published', '-created')
+        ordering = ("-published", "-created")
 
     def __str__(self):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('pages:blog_post', kwargs={'slug': self.slug})
+        return reverse("pages:blog_post", kwargs={"slug": self.slug})

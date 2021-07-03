@@ -6,9 +6,9 @@ from dotenv import load_dotenv
 
 if __name__ == "__main__":
 
-    dot_env = os.path.join(os.path.dirname(__file__), '.env')
+    dot_env = os.path.join(os.path.dirname(__file__), ".env")
     if os.path.isfile(dot_env):
-        load_dotenv(os.path.join(os.path.dirname(__file__), '.env'))
+        load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
 
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings.development")
 

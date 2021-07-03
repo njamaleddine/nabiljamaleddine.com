@@ -13,6 +13,7 @@ class UUIDModel(models.Model):
     An abstract base class model that makes primary key `id` as UUID
     instead of default auto incremented number.
     """
+
     id = models.UUIDField(primary_key=True, editable=False, default=uuid.uuid4)
 
     class Meta:
@@ -24,6 +25,7 @@ class TimeStampedModel(models.Model):
     An abstract base class model that provides self-updating
     ``created`` and ``modified`` fields
     """
+
     created = models.DateTimeField(auto_now_add=True, editable=False)
     modified = models.DateTimeField(auto_now=True, editable=False)
 
@@ -36,6 +38,7 @@ class TimeStampedUUIDModel(TimeStampedModel, UUIDModel):
     An abstract base class model that provides self-updating
     ``created`` and ``modified`` fields with UUID as primary_key field.
     """
+
     class Meta:
         abstract = True
 
@@ -45,8 +48,12 @@ class ImageMixin(models.Model):
     An abstract base class model that provides a VersatileImageField Image
     with POI
     """
+
     image = VersatileImageField(
-        upload_to=upload_to, blank=True, null=True, ppoi_field='image_poi',
+        upload_to=upload_to,
+        blank=True,
+        null=True,
+        ppoi_field="image_poi",
     )
     image_poi = PPOIField(
         blank=True, null=True, verbose_name=_("Image's Point of Interest")

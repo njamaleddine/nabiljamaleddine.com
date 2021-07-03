@@ -4,15 +4,16 @@ from django.contrib import admin
 
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^', include('app.pages.urls', namespace='pages')),
+    url(r"^admin/", admin.site.urls),
+    url(r"^", include("app.pages.urls", namespace="pages")),
 ]
 
 
 if settings.DEBUG:
     import debug_toolbar
+
     urlpatterns += [
-        url(r'^__debug__/', include(debug_toolbar.urls)),
+        url(r"^__debug__/", include(debug_toolbar.urls)),
     ]
 
-admin.site.site_header = f'{settings.SITE_NAME} Admin'
+admin.site.site_header = f"{settings.SITE_NAME} Admin"

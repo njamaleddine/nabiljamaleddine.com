@@ -8,17 +8,17 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('pages', '0002_auto_20161220_0006'),
+        ("pages", "0002_auto_20161220_0006"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='post',
-            options={'ordering': ('-published', '-created')},
+            name="post",
+            options={"ordering": ("-published", "-created")},
         ),
         migrations.AlterField(
-            model_name='post',
-            name='summary',
+            model_name="post",
+            name="summary",
             field=models.TextField(max_length=500),
         ),
     ]
