@@ -9,7 +9,7 @@ brew install node
 
 # Create virtual environment
 python3 -m venv ~/.virtualenvs/$APP_NAME
-source ${APP_NAME}/bin/activate
+source ~/.virtualenvs/${APP_NAME}/bin/activate
 pip install --upgrade pip
 
 # create postgresql database

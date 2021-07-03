@@ -10,7 +10,7 @@ sudo pip install --upgrade pip
 
 # Activate Virtual Environment Requirements
 python3 -m venv ~/.virtualenvs/$APP_NAME
-source ${APP_NAME}/bin/activate
+source ~/.virtualenvs/${APP_NAME}/bin/activate
 pip install --upgrade pip
 
 # install all production requirements
