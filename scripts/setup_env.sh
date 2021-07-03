@@ -12,3 +12,4 @@ sudo echo 'DJANGO_DEBUG=False' >> ${ENV_FILE}
 sudo echo 'DJANGO_SECRET_KEY="'$(openssl rand -hex 64)'"' >> ${ENV_FILE}
 sudo echo 'SITE_ENVIRONMENT="production"' >> ${ENV_FILE}
 sudo echo 'DJANGO_SETTINGS_MODULE="settings.production"' >> ${ENV_FILE}
+sudo echo 'PORT=8000' >> ${ENV_FILE}
