@@ -39,8 +39,8 @@ sudo rm /etc/nginx/sites-enabled/default
 sudo cp /etc/nginx/nginx.conf /etc/nginx/nginx_default.conf
 sudo cp ./nginx.conf /etc/nginx/nginx.conf
 sudo nginx -t
-sudo touch /home/ubuntu/${APP_NAME}/access.log
-sudo touch /home/ubuntu/${APP_NAME}/error.log
+sudo touch /srv/${APP_NAME}/access.log
+sudo touch /srv/${APP_NAME}/error.log
 
 # copy over and start systemd script
 ./scripts/update_services.sh

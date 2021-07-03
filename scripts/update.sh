@@ -1,6 +1,6 @@
 #!/bin/bash
 # Update application
-cd ~/nabiljamaleddine
+cd /srv/nabiljamaleddine
 source ~/.virtualenvs/nabiljamaleddine/bin/activate
 git fetch origin
 git merge origin/master

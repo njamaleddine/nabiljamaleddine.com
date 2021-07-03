@@ -5,11 +5,11 @@ After=network.target
 [Service]
 User=ubuntu
 Group=www-data
-WorkingDirectory=/home/ubuntu/nabiljamaleddine
-Environment=VIRTUAL_ENV=/home/ubuntu/.virtualenvs/nabiljamaleddine
-Environment=PATH=/home/ubuntu/.virtualenvs/nabiljamaleddine/bin:$PATH
+WorkingDirectory=/srv/nabiljamaleddine
+Environment=VIRTUAL_ENV=/root/.virtualenvs/nabiljamaleddine
+Environment=PATH=/root/.virtualenvs/nabiljamaleddine/bin:$PATH
 Environment=PATH=/usr/bin
-ExecStart=/home/ubuntu/.virtualenvs/nabiljamaleddine/bin/gunicorn --access-logfile - --workers 2 --bind unix:/home/ubuntu/nabiljamaleddine/nabiljamaleddine.sock wsgi:application
+ExecStart=/root/.virtualenvs/nabiljamaleddine/bin/gunicorn --access-logfile - --workers 2 --bind unix:/srv/nabiljamaleddine/nabiljamaleddine.sock wsgi:application
 
 [Install]
 WantedBy=multi-user.target

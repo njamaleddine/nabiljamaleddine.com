@@ -49,3 +49,5 @@ sudo apt-get update -y && apt-get upgrade -y && apt-get install -y \
  qt4-designer \
  qt4-dev-tools \
  redis-server
+ sassc
+ 
