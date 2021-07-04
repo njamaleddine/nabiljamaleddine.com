@@ -304,14 +304,23 @@ PROFILE_INFO = {
 }
 
 META_TAGS = {
-    "title": f'{PROFILE_INFO["name"]} | {PROFILE_INFO["role"]}',
-    "keywords": (
-        "Nabil Jamaleddine,Software Engineer,Engineer,Developer,Backend,"
-        "Python,Django,JavaScript,PostgreSQL,Microservices,REST,GraphQL,AWS"
+    "title": env(
+        "META_TITLE",
+        default=f'{PROFILE_INFO["name"]} | {PROFILE_INFO["role"]}',
     ),
-    "description": (
-        "Nabil Jamaleddine, a Software Engineer interested in clean code, schema design, "
-        "and API development."
+    "keywords": env(
+        "META_KEYWORDS",
+        default=(
+            "Nabil Jamaleddine,Software Engineer,Engineer,Developer,Backend,"
+            "Python,Django,JavaScript,PostgreSQL,Microservices,REST,GraphQL,AWS"
+        ),
     ),
-    "theme_color": "#fcfcfc",
+    "description": env(
+        "META_DESCRIPTION",
+        default=(
+            "Nabil Jamaleddine is a Software Engineer interested in API development, "
+            "schema design, and clean code."
+        ),
+    ),
+    "theme_color": env("META_THEME_COLOR", default="#fcfcfc"),
 }
