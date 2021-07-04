@@ -156,9 +156,8 @@ TEMPLATES = [
                 "django.template.context_processors.tz",
                 "django.contrib.messages.context_processors.messages",
                 "django.template.context_processors.request",
-                "app.pages.context_processors.profile_info",
-                "app.pages.context_processors.default_meta_tags",
                 "app.pages.context_processors.canonical_url",
+                "app.pages.context_processors.site_settings",
             ],
         },
     },
@@ -314,4 +313,5 @@ META_TAGS = {
         "Nabil Jamaleddine, a Software Engineer interested in clean code, schema design, "
         "and API development."
     ),
+    "theme_color": "#fcfcfc",
 }

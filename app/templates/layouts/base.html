@@ -10,12 +10,12 @@
         <meta property="og:type" content="website" />
         <meta property="og:title" content="{{ default_meta_tags.title }}" />
         <meta property="og:description" content="{{ default_meta_tags.description }}" />
-        <meta property="og:image" content="{{ STATIC_URL }}images/og-image.jpg" />
+        <meta property="og:image" content="{{ site_url }}images/og-image.jpg" />
         {% endblock %}
 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="theme-color" content="#fcfcfc">
+        <meta name="theme-color" content="{{ default_meta_tags.theme_color }}">
 
         <meta property="og:url" content="{{ get_canonical_url }}" />
         <link rel="canonical" href="{{ get_canonical_url }}" />
