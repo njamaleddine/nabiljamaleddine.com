@@ -7,6 +7,7 @@ app_name = "pages"
 
 urlpatterns = [
     url(r"^$", views.index, name="index"),
+    url(r"^_healthcheck/?$", views.healthcheck, name="healthcheck"),
     url(r"^blog/?$", views.blog, name="blog"),
     url(r"^blog/(?P<slug>\S+)/?$", views.blog_post, name="blog_post"),
 ]

@@ -1,10 +1,16 @@
 # -*- coding: utf-8 -*-
-from django.http import Http404
+from django.http import Http404, JsonResponse
 from django.shortcuts import render
 from django.views.decorators.cache import cache_page
 from markdown import Markdown
 
 from .models import Post, Tag
+
+
+@cache_page(60 * 60)
+def healthcheck(request):
+    """Healthcheck"""
+    return JsonResponse({"status": "ok"})
 
 
 @cache_page(60 * 60)
