@@ -1,8 +1,4 @@
 # -*- coding: utf-8 -*-
-"""Django settings for NabilJamaleddine project.
-
-see: https://docs.djangoproject.com/en/dev/ref/settings/
-"""
 from email.utils import getaddresses
 
 import environ
@@ -17,51 +13,35 @@ env = environ.Env()
 
 
 # MANAGER CONFIGURATION
-# ------------------------------------------------------------------------------
-# Developer Error Notifications
-# In the format 'Full Name <email@example.com>, Full Name <anotheremail@example.com>'
 ADMINS = getaddresses(
     [env("DJANGO_ADMINS", default="Nabil Jamaleddine <me@nabiljamaleddine.com>")]
 )
 
-# Not-necessarily-technical managers of the site. They get broken link
-# notifications and other various emails.
 MANAGERS = ADMINS
 
-# INSTALLED APPS
-# ==========================================================================
-# List of strings representing installed apps.
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
+DJANGO_ADMIN_ENABLED = env("DJANGO_ADMIN_ENABLED", default=False)
+
 INSTALLED_APPS = (
-    "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # 'django.contrib.humanize',  # Useful template tags
-    "versatileimagefield",  # https://github.com/WGBH/django-versatileimagefield
+    "versatileimagefield",
     "storages",
     "app.pages",
     "app.users",
 )
 
-# INSTALLED APPS CONFIGURATION
-# ==========================================================================
+if DJANGO_ADMIN_ENABLED:
+    INSTALLED_APPS = ("django.contrib.admin",) + INSTALLED_APPS
 
-# django.contrib.auth
-# ------------------------------------------------------------------------------
 AUTH_USER_MODEL = "users.User"
 AUTHENTICATION_BACKENDS = ("django.contrib.auth.backends.ModelBackend",)
 
 SITE_NAME = env("SITE_NAME", default="Nabil Jamaleddine's Site")
 SITE_URL = env("SITE_URL", default="http://www.nabiljamaleddine.com")
 
-# MIDDLEWARE CONFIGURATION
-# ------------------------------------------------------------------------------
-# List of middleware classes to use.  Order is important; in the request phase,
-# this middleware classes will be applied in the order given, and in the
-# response phase the middleware will be applied in reverse order.
 MIDDLEWARE = (
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -72,44 +52,20 @@ MIDDLEWARE = (
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 )
 
-
-# DJANGO CORE
-# ------------------------------------------------------------------------------
-
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#debug
-# Defaults to false, which is safe, enable them only in development.
 DEBUG = env.bool("DJANGO_DEBUG", False)
 
-# Local time zone for this installation. Choices can be found here:
-# http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
-# although not all choices may be available on all operating systems.
-# In a Windows environment this must be set to your system time zone.
 TIME_ZONE = "UTC"
 
-# If you set this to False, Django will not use timezone-aware datetimes.
 USE_TZ = True
 
-# Language code for this installation. All choices can be found here:
-# http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = "en-us"
 
-# Languages we provide translations for
 LANGUAGES = (("en", _("English")),)
 
-# If you set this to False, Django will make some optimizations so as not
-# to load the internationalization machinery.
 USE_I18N = True
 
-# If you set this to False, Django will not format dates, numbers and
-# calendars according to the current locale.
 USE_L10N = True
 
-# The Python dotted path to the WSGI application that Django's internal servers
-# (runserver, runfcgi) will use. If `None`, the return value of
-# 'django.core.wsgi.get_wsgi_application' is used, thus preserving the same
-# behavior as previous versions of Django. Otherwise this should point to an
-# actual WSGI application object.
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
 WSGI_APPLICATION = "wsgi.application"
 
 # URL CONFIGURATION
@@ -124,17 +80,12 @@ EMAIL_BACKEND = env(
 
 # DATABASE CONFIGURATION
 # ------------------------------------------------------------------------------
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     "default": env.db("DATABASE_URL", default="postgres://localhost/nabiljamaleddine"),
 }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 DATABASES["default"]["CONN_MAX_AGE"] = 0
 
-
-# TEMPLATE CONFIGURATION
-# -----------------------------------------------------------------------------
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#templates
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -318,8 +269,8 @@ META_TAGS = {
     "description": env(
         "META_DESCRIPTION",
         default=(
-            "Nabil Jamaleddine is a Software Engineer interested in API development, "
-            "schema design, and clean code."
+            "Nabil Jamaleddine is a software engineer who specializes in API "
+            "development, data modeling, and architecture."
         ),
     ),
     "theme_color": env("META_THEME_COLOR", default="#fcfcfc"),
