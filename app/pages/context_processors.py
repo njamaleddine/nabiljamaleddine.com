@@ -2,8 +2,8 @@ from django.conf import settings
 
 
 def canonical_url(request):
-    if request.path == "/":
-        url = f"{settings.SITE_URL}"
+    if request.path.endswith("/"):
+        url = f"{settings.SITE_URL}{request.path}"[0:-1]
     else:
         url = f"{settings.SITE_URL}{request.path}"
 
