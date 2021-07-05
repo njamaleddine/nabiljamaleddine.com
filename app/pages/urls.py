@@ -1,4 +1,4 @@
-from django.conf.urls import url
+from django.urls import re_path
 
 from . import views
 
@@ -6,7 +6,7 @@ from . import views
 app_name = "pages"
 
 urlpatterns = [
-    url(r"^$", views.index, name="index"),
-    url(r"^blog/?$", views.blog, name="blog"),
-    url(r"^blog/(?P<slug>\S+)/?$", views.blog_post, name="blog_post"),
+    re_path(r"^$", views.index, name="index"),
+    re_path(r"^blog/?$", views.blog, name="blog"),
+    re_path(r"^blog/(?P<slug>[\w-]+)/?$", views.blog_post, name="blog_post"),
 ]
