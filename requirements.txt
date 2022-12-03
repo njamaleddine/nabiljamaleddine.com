@@ -32,5 +32,5 @@ apache-log-parser==1.7.0
 # Blog Tooling
 # -------------------------------------
 Markdown==3.4.1
-MarkupSafe==2.0.1
+MarkupSafe==2.1.1
 Pygments==2.13.0
