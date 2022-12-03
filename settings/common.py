@@ -3,7 +3,7 @@ from email.utils import getaddresses
 
 import environ
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from app.base.logging import CustomJSONFormatter as JSONFormatter
 
 ROOT_DIR = environ.Path(__file__) - 2  # (/a/b/myfile.py - 2 = /a/)

@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.views.decorators.cache import cache_page
 from markdown import Markdown
 
-from .models import Post, Tag
+from app.pages.models import Post, Tag
 
 
 @cache_page(60 * 60)
