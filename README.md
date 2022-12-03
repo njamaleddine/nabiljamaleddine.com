@@ -1,6 +1,6 @@
 # NabilJamaleddine.com
 
-Version: 1.0.0
+Version: 1.1.0
 
 NabilJamaleddine.com is a Django Application built with Python 3
 
