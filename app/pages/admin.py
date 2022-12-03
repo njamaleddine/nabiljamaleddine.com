@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Post, Tag
+from app.pages.models import Post, Tag
 
 
 @admin.register(Post)

@@ -1,36 +1,36 @@
 # Core
 # -------------------------------------
-Django==3.2.4
+Django==4.1.3
 gunicorn==20.1.0
 
 # Configuration
 # -------------------------------------
-django-environ==0.4.5
-python-dotenv==0.18.0
+django-environ==0.9.0
+python-dotenv==0.21.0
 
 # Extensions
 # -------------------------------------
-pytz==2021.1
+pytz==2022.6
 
 # Models
 # -------------------------------------
-psycopg2==2.9.1
-django-model-utils==4.1.1
-Pillow==8.2.0
-django-versatileimagefield==2.1
+psycopg2==2.9.5
+django-model-utils==4.3.1
+Pillow==9.3.0
+django-versatileimagefield==2.2
 django-uuid-upload-path==1.0.0
 
 # Static Files and Media Storage
 # -------------------------------------
-django-storages==1.11.1
+django-storages==1.13.1
 
 # Logging
 # -------------------------------------
-python-json-logger==2.0.1
+python-json-logger==2.0.4
 apache-log-parser==1.7.0
 
 # Blog Tooling
 # -------------------------------------
-Markdown==3.3.4
+Markdown==3.4.1
 MarkupSafe==2.0.1
-Pygments==2.9.0
+Pygments==2.13.0

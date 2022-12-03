@@ -5,7 +5,7 @@ from uuid_upload_path import upload_to
 
 from app.base.models import TimeStampedUUIDModel
 from app.users.models import User
-from .managers import PostManager
+from app.pages.managers import PostManager
 
 
 class Tag(TimeStampedUUIDModel):
