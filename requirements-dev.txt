@@ -7,7 +7,7 @@ devrecargar==0.1.4
 # Debugging
 # -------------------------------------
 django-debug-toolbar==3.8.1
-ipython==8.7.0
+ipython==8.10.0
 django-extensions==3.2.1  # for shell_plus and other utils
 Werkzeug==2.2.2
 
