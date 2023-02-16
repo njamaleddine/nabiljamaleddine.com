@@ -9,7 +9,7 @@ devrecargar==0.1.4
 django-debug-toolbar==3.8.1
 ipython==8.7.0
 django-extensions==3.2.1  # for shell_plus and other utils
-Werkzeug==2.2.2
+Werkzeug==2.2.3
 
 # Testing, coverage, linting
 # -------------------------------------
